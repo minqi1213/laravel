@@ -24,7 +24,7 @@
 					<li>
 						<input type="text" class="code" name="code"/>
 						<span><i class="fa fa-check-square-o"></i></span>
-						<img src="#" alt="">
+						<img src="{{url('engineer/code')}}" alt="" onclick="this.src='{{url('engineer/code')}}?'+Math.random()">
 					</li>
 					<li>
 						<input type="submit" value="立即登陆"/>

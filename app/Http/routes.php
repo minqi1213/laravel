@@ -29,4 +29,6 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::get('/engineer/login', 'Engineer\LoginController@login');
+    Route::get('/engineer/code', 'Engineer\LoginController@code');
+    Route::get('/engineer/getcode', 'Engineer\LoginController@getcode');
 });
