@@ -23,12 +23,21 @@
 |
 */
 
+
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', function () {
+    Route::get('/',function(){
         return view('welcome');
     });
 
-    Route::get('/engineer/login', 'Engineer\LoginController@login');
-    Route::get('/engineer/code', 'Engineer\LoginController@code');
-    Route::get('/engineer/getcode', 'Engineer\LoginController@getcode');
+    Route::any('engineer/login','Engineer\LoginController@login');
+    Route::get('engineer/code','Engineer\LoginController@code');
+    Route::get('engineer/getcode','Engineer\LoginController@getcode');
+    Route::get('engineer/crypt','Engineer\LoginController@crypt');
+});
+
+Route::group(['middleware' => ['web','engineer.login'],'prefix'=>'engineer','namespace'=>'Engineer'], function () {
+    Route::get('index','IndexController@index');
+    Route::get('info','IndexController@info');
+    Route::get('quit','LoginController@quit');
+    Route::any('pass','IndexController@pass');
 });

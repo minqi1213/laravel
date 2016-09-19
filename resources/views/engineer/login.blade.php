@@ -10,8 +10,11 @@
 		<h1>SunnyTest</h1>
 		<h2>欢迎使用众包管理平台</h2>
 		<div class="form">
-			<p style="color:red">用户名错误</p>
-			<form action="#" method="post">
+			@if(session('msg'))
+				<p style="color:red">{{session('msg')}}</p>
+			@endif
+			<form action="" method="post">
+				{{csrf_field()}}
 				<ul>
 					<li>
 					<input type="text" name="username" class="text"/>
