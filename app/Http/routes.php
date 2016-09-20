@@ -36,8 +36,15 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::group(['middleware' => ['web','engineer.login'],'prefix'=>'engineer','namespace'=>'Engineer'], function () {
+    Route::get('/','IndexController@index');
     Route::get('index','IndexController@index');
     Route::get('info','IndexController@info');
     Route::get('quit','LoginController@quit');
     Route::any('pass','IndexController@pass');
+    Route::get('bug','BugController@index');
+    Route::post('getbug','BugController@getbug');
+    Route::any('savebug','BugController@savebug');
+    Route::get('case','CaseController@index');
+    Route::get('mission','MissionController@index');
+    Route::any('upload','CommonController@upload');
 });
