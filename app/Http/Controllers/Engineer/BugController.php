@@ -84,4 +84,25 @@ class BugController extends CommonController
             echo json_encode(array('msg'=>'Some errors occured.'));
         }
     }
+
+    public function savechange()
+    {
+        $userid =session('userid');
+        $bid = $_POST['bid'];
+        $bproject = $_POST['projectselect_displaybug'];
+        $btitle = $_POST['btitle'];
+        $bdescription = $_POST['bdescription'];
+        $str_file1 = $_POST['photo1'];
+        $str_file2 = $_POST['photo2'];
+        $str_file1 = ($str_file1!=NULL)?$str_file1:"";
+        $str_file2 = ($str_file2!=NULL)?$str_file2:"";
+
+        $affect = DB::update('UPDATE bug SET uid=?, pid=?, btitle=?, bdescription=?, binarydata=?, binarydata2=? where bid='.$bid,
+            array($userid,$bproject,$btitle,$bdescription,$str_file1,$str_file2));
+        if($affect ==1){
+            echo json_encode(array('success'=>true));
+        } else {
+            echo json_encode(array('msg'=>'Some errors occured.'));
+        }
+    }
 }

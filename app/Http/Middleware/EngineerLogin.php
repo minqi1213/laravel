@@ -16,9 +16,9 @@ class EngineerLogin
     public function handle($request, Closure $next)
     {
         if(!session('role') || !session('userid')){
-            return redirect('admin/login');
-        } else if (session('role'!='admin')){
-            return redirect('admin/login');
+            return redirect('engineer/login');
+        } else if (session('role'!='engineer')){
+            return redirect('engineer/login');
         }
         return $next($request);
     }

@@ -41,9 +41,12 @@ Route::group(['middleware' => ['web','engineer.login'],'prefix'=>'engineer','nam
     Route::get('info','IndexController@info');
     Route::get('quit','LoginController@quit');
     Route::any('pass','IndexController@pass');
+
     Route::get('bug','BugController@index');
     Route::post('getbug','BugController@getbug');
-    Route::any('savebug','BugController@savebug');
+    Route::post('savebug','BugController@savebug');
+    Route::any('savechange','BugController@savechange');
+
     Route::get('case','CaseController@index');
     Route::get('mission','MissionController@index');
     Route::any('upload','CommonController@upload');

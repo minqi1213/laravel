@@ -88,11 +88,17 @@
         <div id="filearea_display">
             <div style="margin-bottom:20px">
                 <div>截图1:</div>
-                <input class="easyui-filebox" name="photo1" data-options="prompt:'选择一张截图...'" style="width:90%">
+                <input name="photo1" class="easyui-textbox" size="50" type="text" readOnly="true" data-options="prompt:'选择一张截图...'"/>
+                <input id="file_upload_edit" name="file_upload_edit" type="file" multiple="true">
+                <img id="display_edit_photo1" name="edit_photo1" width="40%" src="" onclick="javascript:showImg(src)" style="display:none;">
+                {{--<input class="easyui-filebox" name="photo1" data-options="prompt:'选择一张截图...'" style="width:90%">--}}
             </div>
             <div style="margin-bottom:20px">
                 <div>截图2:</div>
-                <input class="easyui-filebox" name="photo2" data-options="prompt:'选择一张截图...'" style="width:90%">
+                <input name="photo2" class="easyui-textbox" size="50" type="text" readOnly="true" data-options="prompt:'选择一张截图...'"/>
+                <input id="file_upload_2_edit" name="file_upload_2_edit" type="file" multiple="true">
+                <img id="display_edit_photo2" name="edit_photo1" width="40%" src="" onclick="javascript:showImg(src)" style="display:none;">
+                {{--<input class="easyui-filebox" name="photo2" data-options="prompt:'选择一张截图...'" style="width:90%">--}}
             </div>
         </div>
         <div id="imgarea_display">
@@ -114,12 +120,10 @@
     <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg_displaybug').dialog('close');">取消</a>
 </div>
 
-<div id="dlg_displayimg" class="easyui-dialog"  style="width:100%;height:100%;"
-     closed="true">
-    <div style="margin-bottom:20px;width:100%;float:left">
-        <img id="display_img" name="display_img" width="100%" src="">
+    <div id="dlg_displayimg" class="easyui-window" title="截图浏览" data-options="modal:true,closed:true"  style="top:10px;width:100%;padding:10px;"
+         closed="true">
+            <img id="display_img" name="display_img" width="100%" src="">
     </div>
-</div>
 </body>
 <script type="text/javascript">
     var url;
@@ -231,16 +235,36 @@
             if(row.binarydata==""){
                 document.getElementById('display_photo1_div').style.display="none";
                 $('#display_photo1').attr('src',"");
+                $('#fm_displaybug').form('load',{
+                    photo1 : ""
+                });
+                $('#display_edit_photo1').attr('src','');
+                $('#display_edit_photo1').attr('style','display:none;');
             } else {
                 document.getElementById('display_photo1_div').style.display="block";
                 $('#display_photo1').attr('src','/'+row.binarydata);
+                $('#fm_displaybug').form('load',{
+                    photo1 : row.binarydata
+                });
+                $('#display_edit_photo1').attr('src','/'+row.binarydata);
+                $('#display_edit_photo1').attr('style','display:block;');
             }
             if(row.binarydata2==""){
                 document.getElementById('display_photo2_div').style.display="none";
                 $('#display_photo2').attr('src',"");
+                $('#fm_displaybug').form('load',{
+                    photo2 : ""
+                });
+                $('#display_edit_photo2').attr('src','');
+                $('#display_edit_photo2').attr('style','display:none;');
             } else {
                 document.getElementById('display_photo2_div').style.display="block";
                 $('#display_photo2').attr('src','/'+row.binarydata2);
+                $('#fm_displaybug').form('load',{
+                    photo2 : row.binarydata2
+                });
+                $('#display_edit_photo2').attr('src','/'+row.binarydata2);
+                $('#display_edit_photo2').attr('style','display:block;');
             }
         }
     }
@@ -254,10 +278,10 @@
         $('#filearea_display').css('display','block');
         $('#dlg-buttons-display').css('display','block');
         $('#savebtn_editbug').linkbutton('enable');
-        url = './bugs/save_change.php';
+        url = '{{url('engineer/savechange')}}?_token={{csrf_token()}}';
     }
     function showImg(src){
-        $('#dlg_displayimg').dialog('open').dialog('setTitle','截图');
+        $('#dlg_displayimg').window('open');
         $('#display_img').attr('src','');
         $('#display_img').attr('src',src);
     }
@@ -455,8 +479,8 @@
                 $('#fm_newbug').form('load',{
                     photo1 : data
                 });
-                $('#display_photo1').attr('src','/'+data);
-                $('#display_photo1').attr('style','display:block;');
+                $('#edit_photo1').attr('src','/'+data);
+                $('#edit_photo1').attr('style','display:block;');
             }
         });
     });
@@ -474,8 +498,46 @@
                 $('#fm_newbug').form('load',{
                     photo2 : data
                 });
-                $('#display_photo2').attr('src','/'+data);
-                $('#display_photo2').attr('style','display:block;');
+                $('#edit_photo2').attr('src','/'+data);
+                $('#edit_photo2').attr('style','display:block;');
+            }
+        });
+    });
+    $(function() {
+        $('#file_upload_edit').uploadify({
+            'formData'     : {
+                'timestamp' : '<?php echo $timestamp;?>',
+                '_token'     : '{{csrf_token()}}'
+            },
+            'buttonText'    : '图片上传',
+            'swf'      : "{{asset('resources/org/uploadify/uploadify.swf')}}",
+            'uploader' : "{{url('engineer/upload')}}",
+            'onUploadSuccess' : function(file, data, response) {
+//                $('#photo1_name').val(data);
+                $('#fm_displaybug').form('load',{
+                    photo1 : data
+                });
+                $('#display_edit_photo1').attr('src','/'+data);
+                $('#display_edit_photo1').attr('style','display:block;');
+            }
+        });
+    });
+    $(function() {
+        $('#file_upload_2_edit').uploadify({
+            'formData'     : {
+                'timestamp' : '<?php echo $timestamp;?>',
+                '_token'     : '{{csrf_token()}}'
+            },
+            'buttonText'    : '图片上传',
+            'swf'      : "{{asset('resources/org/uploadify/uploadify.swf')}}",
+            'uploader' : "{{url('engineer/upload')}}",
+            'onUploadSuccess' : function(file, data, response) {
+//                $('#photo1_name').val(data);
+                $('#fm_displaybug').form('load',{
+                    photo2 : data
+                });
+                $('#display_edit_photo2').attr('src','/'+data);
+                $('#display_edit_photo2').attr('style','display:block;');
             }
         });
     });
