@@ -25,29 +25,33 @@
 
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/',function(){
+    Route::get('/', function () {
         return view('welcome');
     });
 
-    Route::any('engineer/login','Engineer\LoginController@login');
-    Route::get('engineer/code','Engineer\LoginController@code');
-    Route::get('engineer/getcode','Engineer\LoginController@getcode');
-    Route::get('engineer/crypt','Engineer\LoginController@crypt');
+    Route::any('engineer/login', 'Engineer\LoginController@login');
+    Route::get('engineer/code', 'Engineer\LoginController@code');
+    Route::get('engineer/getcode', 'Engineer\LoginController@getcode');
+    Route::get('engineer/crypt', 'Engineer\LoginController@crypt');
 });
 
-Route::group(['middleware' => ['web','engineer.login'],'prefix'=>'engineer','namespace'=>'Engineer'], function () {
-    Route::get('/','IndexController@index');
-    Route::get('index','IndexController@index');
-    Route::get('info','IndexController@info');
-    Route::get('quit','LoginController@quit');
-    Route::any('pass','IndexController@pass');
+Route::group(['middleware' => ['web', 'engineer.login'], 'prefix' => 'engineer', 'namespace' => 'Engineer'], function () {
+    Route::get('/', 'IndexController@index');
+    Route::get('index', 'IndexController@index');
+    Route::get('info', 'IndexController@info');
+    Route::get('quit', 'LoginController@quit');
+    Route::any('pass', 'IndexController@pass');
 
-    Route::get('bug','BugController@index');
-    Route::post('getbug','BugController@getbug');
-    Route::post('savebug','BugController@savebug');
-    Route::any('savechange','BugController@savechange');
+    Route::get('bug', 'BugController@index');
+    Route::post('getbug', 'BugController@getbug');
+    Route::post('savebug', 'BugController@savebug');
+    Route::post('savechange', 'BugController@savechange');
 
-    Route::get('case','CaseController@index');
-    Route::get('mission','MissionController@index');
-    Route::any('upload','CommonController@upload');
+    Route::get('case', 'CaseController@index');
+    Route::post('getcase', 'CaseController@getcase');
+    Route::post('updatestatus', 'CaseController@updatestatus');
+    Route::any('getbugdetail', 'CaseController@getbugdetail');
+
+    Route::get('mission', 'MissionController@index');
+    Route::any('upload', 'CommonController@upload');
 });
