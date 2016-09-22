@@ -19,7 +19,8 @@
 		</div>
 		<div class="top_right">
 			<ul>
-				<li>用户名：admin</li>
+				<li>用户名: {{session('name')}}
+				</li>
 				<li><a href="{{url('engineer/pass')}}" target="main">修改密码</a></li>
 				<li><a href="{{url('engineer/quit')}}">退出</a></li>
 			</ul>

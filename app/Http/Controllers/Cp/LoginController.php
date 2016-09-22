@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Engineer;
+namespace App\Http\Controllers\Cp;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,19 +19,19 @@ class LoginController extends CommonController
             if(strtoupper($input['code'])!=$_code){
                 return back()->with('msg','验证码错误！');
             }
-            $user = DB::select('select * from user where username=:username limit 1',['username'=>$input['username']]);
+            $user = DB::select('select * from cp where cpname=:username limit 1',['username'=>$input['username']]);
             if($user==[]){
                 return back()->with('msg','用户名或者密码错误！');
             }
-            if($user[0]->username != $input['username'] || Crypt::decrypt($user[0]->password)!=$input['password']){
+            if($user[0]->cpname != $input['username'] || Crypt::decrypt($user[0]->password)!=$input['password']){
                 return back()->with('msg','用户名或者密码错误！');
             }
-            session(['role'=>'engineer']);
-            session(['userid'=>$user[0]->uid]);
-            session(['name'=>$user[0]->username]);
-            return redirect('engineer/index');
+            session(['role'=>'cp']);
+            session(['userid'=>$user[0]->cpid]);
+            session(['name'=>$user[0]->cpname]);
+            return redirect('cp/index');
         } else {
-            return view('engineer.login');
+            return view('cp.login');
         }
     }
 
@@ -54,6 +54,6 @@ class LoginController extends CommonController
         session(['role'=>null]);
         session(['userid'=>null]);
         session(['name'=>null]);
-        return redirect('engineer/login');
+        return redirect('cp/login');
     }
 }
