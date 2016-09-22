@@ -118,10 +118,12 @@
             <label>请选择项目:</label>
             <select id="projectselect_displaybug" name="projectselect_displaybug" disabled="disabled"
                     data-options="required:true" class="easyui-combobox" panelHeight="auto" style="width:100px">
+                @if(isset($data))
                 @foreach($data as $d)
                     echo "
                     <option value="{{$d->pid}}">{{$d->pname}}</option>";
                 @endforeach
+                @endif
             </select>
         </div>
         <div class="fitem">
@@ -452,7 +454,7 @@
         $('#fm_accept').form('load', {
             pid: pid
         });
-        url = './missions/accept_mission.php';
+        url = '{{url('engineer/acceptmission')}}?_token={{csrf_token()}}';
         $('#fm_accept').form('submit', {
             url: url,
             onSubmit: function () {

@@ -35,7 +35,7 @@
                 <ul class="sub_menu">
                     <li><a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>bug管理</a></li>
                     <li><a href="{{url('engineer/case')}}" target="main"><i class="fa fa-fw"></i>测试用例管理</a></li>
-                    <li><a href="tab.html" target="main"><i class="fa fa-fw"></i>任务接取中心</a></li>
+                    <li><a href="{{url('engineer/mission')}}" target="main"><i class="fa fa-fw"></i>任务接取中心</a></li>
                 </ul>
             </li>
             {{--<li>--}}
