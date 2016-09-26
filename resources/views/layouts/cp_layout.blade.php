@@ -259,6 +259,7 @@
         var row = $('#dg_mission_cp').datagrid('getSelected');
         if (row){
             $('#dlg_mission_edit').dialog('open').dialog('setTitle','修改任务');
+            $('#fm_mission_edit').form('clear');
             $('#fm_mission_edit').form('load',row);
             url = '{{url('cp/savechange')}}?_token={{csrf_token()}}';
         }

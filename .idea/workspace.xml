@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af702590-4ff4-4289-8f2c-49d62e070f8e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php" />
     </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,8 +78,8 @@
       <file leaf-file-name="mission.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cp/mission.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="75" column="49" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="49" />
+            <state relative-caret-position="214">
+              <caret line="77" column="52" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
               <folding>
                 <element signature="e#193#211#0#HTML" expanded="true" />
                 <element signature="e#1289#1320#0#HTML" expanded="true" />
@@ -118,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cp_layout.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cp_layout.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="382" column="37" selection-start-line="382" selection-start-column="37" selection-end-line="382" selection-end-column="37" />
+            <state relative-caret-position="239">
+              <caret line="262" column="51" selection-start-line="262" selection-start-column="51" selection-end-line="262" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -137,18 +138,18 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1474883710162" expanded="true" signature="11491:11501" ph="..." />
-                <marker date="1474883710162" expanded="true" signature="11587:11599" ph="..." />
+                <marker date="1474885086936" expanded="true" signature="11540:11550" ph="..." />
+                <marker date="1474885086936" expanded="true" signature="11636:11648" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+            <state relative-caret-position="343">
+              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
               <folding>
                 <marker date="1474879876336" expanded="true" signature="594:645" ph="select * fro... user" />
               </folding>
@@ -212,13 +213,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cp/BugController.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/bug.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Engineer/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cp/CommonController.php" />
         <option value="$PROJECT_DIR$/resources/views/cp/mission.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cp/MissionController.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Engineer/LoginController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php" />
       </list>
     </option>
   </component>
@@ -583,16 +584,16 @@
       <workItem from="1474423832317" duration="17344000" />
       <workItem from="1474514709326" duration="10411000" />
       <workItem from="1474597773604" duration="14036000" />
-      <workItem from="1474855507824" duration="19901000" />
+      <workItem from="1474855507824" duration="20593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109232000" />
+    <option name="totallyTimeSpent" value="109924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18446602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -601,7 +602,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37529692" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37529692" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -983,70 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cp/mission.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="75" column="49" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="49" />
-          <folding>
-            <element signature="e#193#211#0#HTML" expanded="true" />
-            <element signature="e#1289#1320#0#HTML" expanded="true" />
-            <element signature="e#1673#1709#0#HTML" expanded="true" />
-            <element signature="e#1775#1842#0#HTML" expanded="true" />
-            <element signature="e#2244#2275#0#HTML" expanded="true" />
-            <element signature="e#2533#2577#0#HTML" expanded="true" />
-            <element signature="e#2977#3044#0#HTML" expanded="true" />
-            <element signature="e#3465#3496#0#HTML" expanded="true" />
-            <element signature="e#3763#3807#0#HTML" expanded="true" />
-            <element signature="e#3917#3943#0#HTML" expanded="true" />
-            <element signature="e#4971#5038#0#HTML" expanded="true" />
-            <element signature="e#5325#5345#0#HTML" expanded="true" />
-            <element signature="e#5490#5520#0#HTML" expanded="true" />
-            <element signature="e#5784#5815#0#HTML" expanded="true" />
-            <element signature="e#6082#6126#0#HTML" expanded="true" />
-            <element signature="e#6236#6262#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="382" column="37" selection-start-line="382" selection-start-column="37" selection-end-line="382" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1474883710162" expanded="true" signature="11491:11501" ph="..." />
-            <marker date="1474883710162" expanded="true" signature="11587:11599" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cp/MissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-          <folding>
-            <marker date="1474883983847" expanded="true" signature="651:697" ph="select count... project" />
-            <marker date="1474883983847" expanded="true" signature="927:981" ph="select * fro... project" />
-            <marker date="1474883983847" expanded="true" signature="1476:1552" ph="INSERT INTO project... " />
-            <marker date="1474883983847" expanded="true" signature="2110:2171" ph="UPDATE proje... " />
-            <marker date="1474883983847" expanded="true" signature="2110:2183" ph="UPDATE proje... " />
-            <marker date="1474883983847" expanded="true" signature="2116:2171" ph="INSERT INTO project... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1085,10 +1022,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        <state relative-caret-position="343">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
           <folding>
             <marker date="1474879876336" expanded="true" signature="594:645" ph="select * fro... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cp/MissionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+          <folding>
+            <marker date="1474883983847" expanded="true" signature="651:697" ph="select count... project" />
+            <marker date="1474883983847" expanded="true" signature="927:981" ph="select * fro... project" />
+            <marker date="1474883983847" expanded="true" signature="1476:1552" ph="INSERT INTO project... " />
+            <marker date="1474883983847" expanded="true" signature="2110:2171" ph="UPDATE proje... " />
+            <marker date="1474883983847" expanded="true" signature="2110:2183" ph="UPDATE proje... " />
+            <marker date="1474883983847" expanded="true" signature="2116:2171" ph="INSERT INTO project... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cp/mission.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="77" column="52" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+          <folding>
+            <element signature="e#193#211#0#HTML" expanded="true" />
+            <element signature="e#1289#1320#0#HTML" expanded="true" />
+            <element signature="e#1673#1709#0#HTML" expanded="true" />
+            <element signature="e#1775#1842#0#HTML" expanded="true" />
+            <element signature="e#2244#2275#0#HTML" expanded="true" />
+            <element signature="e#2533#2577#0#HTML" expanded="true" />
+            <element signature="e#2977#3044#0#HTML" expanded="true" />
+            <element signature="e#3465#3496#0#HTML" expanded="true" />
+            <element signature="e#3763#3807#0#HTML" expanded="true" />
+            <element signature="e#3917#3943#0#HTML" expanded="true" />
+            <element signature="e#4971#5038#0#HTML" expanded="true" />
+            <element signature="e#5325#5345#0#HTML" expanded="true" />
+            <element signature="e#5490#5520#0#HTML" expanded="true" />
+            <element signature="e#5784#5815#0#HTML" expanded="true" />
+            <element signature="e#6082#6126#0#HTML" expanded="true" />
+            <element signature="e#6236#6262#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cp_layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="262" column="51" selection-start-line="262" selection-start-column="51" selection-end-line="262" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1474885086936" expanded="true" signature="11540:11550" ph="..." />
+            <marker date="1474885086936" expanded="true" signature="11636:11648" ph="..." />
           </folding>
         </state>
       </provider>
