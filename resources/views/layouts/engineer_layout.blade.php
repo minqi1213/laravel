@@ -487,7 +487,7 @@
             $('#fm_mission').form('load', row);
             if ((row.status == 1) && (row.binarydata !== "")) {
                 document.getElementById('pdownload').style.display = "block";
-                $('#download_link').attr("href", row.binarydata);
+                $('#download_link').attr("href", '/'+row.binarydata);
             } else {
                 document.getElementById('pdownload').style.display = "none";
                 $('#download_link').attr("href", '');
