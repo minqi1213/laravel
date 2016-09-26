@@ -46,8 +46,8 @@ class LoginController extends CommonController
     }
 
     public function crypt(){
-        $str = 'eyJpdiI6InJCVnJhbVNnUzdxSUFVT28xQmVxMHc9PSIsInZhbHVlIjoickdjN2VpVlRlclQ0aHprY3M3UEVWdz09IiwibWFjIjoiMWNiZDEwYTE3MWYxNjQ0NmYyZTY0OGY2YWUzYmViMTg5MmNjMWJhZWIzNDZkMmZkMjM3ZDdlMmYxNmJlM2ZkNSJ9';
-        echo Crypt::decrypt($str);
+        $str = '123456';
+        echo Crypt::encrypt($str);
     }
 
     public function quit(){

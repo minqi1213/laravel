@@ -217,25 +217,6 @@
         $('#display_img').attr('src','');
         $('#display_img').attr('src',src);
     }
-    function removeUser(){
-        var row = $('#dg').datagrid('getSelected');
-        if (row){
-            $.messager.confirm('Confirm','Are you sure you want to remove this user?',function(r){
-                if (r){
-                    $.post('remove_user.php',{id:row.id},function(result){
-                        if (result.success){
-                            $('#dg').datagrid('reload');	// reload the user data
-                        } else {
-                            $.messager.show({	// show error message
-                                title: 'Error',
-                                msg: result.msg
-                            });
-                        }
-                    },'json');
-                }
-            });
-        }
-    }
     function displayMission(index){
         $('#dg_mission_cp').datagrid('selectRow',index);
         var row=$('#dg_mission_cp').datagrid('getSelected');
@@ -249,7 +230,7 @@
     function newMission(){
         $('#dlg_mission_new').dialog('open').dialog('setTitle','新建任务');
         $('#fm_mission_new').form('clear');
-        url='./missions/save_mission.php';
+        url='{{url('cp/savemission')}}?_token={{csrf_token()}}';
     }
     function saveMission(){
         $('#savebtn_newmission').linkbutton("disable");
@@ -279,7 +260,7 @@
         if (row){
             $('#dlg_mission_edit').dialog('open').dialog('setTitle','修改任务');
             $('#fm_mission_edit').form('load',row);
-            url = './missions/save_mission_change.php';
+            url = '{{url('cp/savechange')}}?_token={{csrf_token()}}';
         }
     }
     function saveMissionChange(){
@@ -369,5 +350,40 @@
             }
         });
     }
+    <?php $timestamp = time();?>
+		$(function () {
+        $('#file_upload').uploadify({
+            'formData': {
+                'timestamp': '<?php echo $timestamp;?>',
+                '_token': '{{csrf_token()}}'
+            },
+            'fileSizeLimit': '200000KB',//文件最大容量
+            'buttonText': '文件上传',
+            'swf': "{{asset('resources/org/uploadify/uploadify.swf')}}",
+            'uploader': "{{url('cp/upload')}}",
+            'onUploadSuccess': function (file, data, response) {
+                $('#fm_mission_new').form('load', {
+                    application: data
+                });
+            }
+        });
+    });
+    $(function () {
+        $('#file_upload_edit').uploadify({
+            'formData': {
+                'timestamp': '<?php echo $timestamp;?>',
+                '_token': '{{csrf_token()}}'
+            },
+            'fileSizeLimit': '200000KB',//文件最大容量
+            'buttonText': '文件上传',
+            'swf': "{{asset('resources/org/uploadify/uploadify.swf')}}",
+            'uploader': "{{url('cp/upload')}}",
+            'onUploadSuccess': function (file, data, response) {
+                $('#fm_mission_edit').form('load', {
+                    application: data
+                });
+            }
+        });
+    });
 </script>
 </html>

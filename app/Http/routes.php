@@ -70,18 +70,12 @@ Route::group(['middleware' => ['web', 'cp.login'], 'prefix' => 'cp', 'namespace'
     Route::any('pass', 'IndexController@pass');
 
     Route::get('bug', 'BugController@index');
-    Route::any('getbug', 'BugController@getbug');
-    Route::post('savebug', 'BugController@savebug');
-    Route::post('savechange', 'BugController@savechange');
-
-    Route::get('case', 'CaseController@index');
-    Route::post('getcase', 'CaseController@getcase');
-    Route::post('updatestatus', 'CaseController@updatestatus');
-    Route::post('getbugdetail', 'CaseController@getbugdetail');
+    Route::post('getbug', 'BugController@getbug');
 
     Route::get('mission', 'MissionController@index');
     Route::post('getmission', 'MissionController@getmission');
-    Route::any('acceptmission', 'MissionController@acceptmission');
+    Route::any('savemission', 'MissionController@savemission');
+    Route::any('savechange', 'MissionController@savechange');
 
     Route::any('upload', 'CommonController@upload');
 });

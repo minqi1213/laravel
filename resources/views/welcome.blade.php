@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">欢迎访问SunnyTest众包平台</div>
+                <div class="title">欢迎访问SunnyTest众包平台{{phpinfo()}}</div>
             </div>
         </div>
     </body>
