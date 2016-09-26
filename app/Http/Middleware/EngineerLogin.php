@@ -17,7 +17,7 @@ class EngineerLogin
     {
         if(!session('role') || !session('userid')){
             return redirect('engineer/login');
-        } else if (session('role'!='engineer')){
+        } else if (session('role')!='engineer'){
             return redirect('engineer/login');
         }
         return $next($request);

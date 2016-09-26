@@ -17,7 +17,7 @@ class CpLogin
     {
         if(!session('role') || !session('userid')){
             return redirect('cp/login');
-        } else if (session('role'!='cp')){
+        } else if (session('role')!='cp'){
             return redirect('cp/login');
         }
         return $next($request);

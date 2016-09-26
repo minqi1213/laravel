@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Laravel</title>
-
-        
-
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{asset('resources/views/engineer/style/css/ch-ui.admin.css')}}">
+        <link rel="stylesheet" href="{{asset('resources/views/engineer/style/font/css/font-awesome.min.css')}}">
         <style>
             html, body {
                 height: 100%;
@@ -39,6 +39,9 @@
         <div class="container">
             <div class="content">
                 <div class="title">欢迎访问SunnyTest众包平台</div>
+                <br><br><br><br><br><br>
+                <input type="submit" value="我是工程师" onClick='location.href="{{url('engineer')}}"'/>
+                <input type="submit" value="我是开发商" onClick='location.href="{{url('cp')}}"'/>
             </div>
         </div>
     </body>
