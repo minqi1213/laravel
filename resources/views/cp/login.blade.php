@@ -35,7 +35,7 @@
 				</ul>
 			</form>
 			<p class="to_register">还没有SunnyTest账号？<a href="#">快速注册</a></p>
-			<p><a href="#">返回首页</a> &copy; 2016 Powered by <a href="http://www.sunnytest.com" target="_blank">http://www.sunnytest.com</a></p>
+			<p><a href={{url('')}}>返回首页</a> &copy; 2016 Powered by <a href="http://www.sunnytest.com" target="_blank">http://www.sunnytest.com</a></p>
 		</div>
 	</div>
 </body>
