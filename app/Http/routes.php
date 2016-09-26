@@ -70,7 +70,7 @@ Route::group(['middleware' => ['web', 'cp.login'], 'prefix' => 'cp', 'namespace'
     Route::any('pass', 'IndexController@pass');
 
     Route::get('bug', 'BugController@index');
-    Route::post('getbug', 'BugController@getbug');
+    Route::any('getbug', 'BugController@getbug');
     Route::post('savebug', 'BugController@savebug');
     Route::post('savechange', 'BugController@savechange');
 
