@@ -261,6 +261,9 @@
             $('#dlg_mission_edit').dialog('open').dialog('setTitle','修改任务');
             $('#fm_mission_edit').form('clear');
             $('#fm_mission_edit').form('load',row);
+            $('#fm_mission_edit').form('load', {
+                application: row.binarydata
+            });
             url = '{{url('cp/savechange')}}?_token={{csrf_token()}}';
         }
     }
