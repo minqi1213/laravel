@@ -18,7 +18,7 @@
 	
     <div class="result_wrap">
         <div class="result_title">
-            <h3>系统基本信息</h3>
+            <h2>欢迎登录SunnyTest众包平台</h2>
         </div>
         <div class="result_content">
             <ul>
@@ -32,10 +32,10 @@
                     <label>PHP运行方式</label><span>apache2handler</span>
                 </li>
                 <li>
-                    <label>静静设计-版本</label><span>v-0.1</span>
+                    <label>版本</label><span>v-0.1</span>
                 </li>
                 <li>
-                    <label>上传附件限制</label><span>2M</span>
+                    <label>上传附件限制</label><span>200M</span>
                 </li>
                 <li>
                     <label>北京时间</label><span><?php echo date('Y年m月d日 H时i分s秒')?></span>
