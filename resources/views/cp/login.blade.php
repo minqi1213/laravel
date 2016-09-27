@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>开发商登录</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="{{asset('resources/views/cp/style/css/ch-ui.admin.css')}}">
 	<link rel="stylesheet" href="{{asset('resources/views/cp/style/font/css/font-awesome.min.css')}}">
