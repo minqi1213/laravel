@@ -391,7 +391,9 @@
                 var result = eval('(' + result + ')');
                 if (result.success) {
                     $('#dlg').dialog('close');		// close the dialog
-                    $('#dg').datagrid('reload');	// reload the user data
+//                    $('#dg').datagrid('reload');	// reload the user data
+                    $('#dg').datagrid('reload');
+                    editIndex = undefined;
                 } else {
                     $.messager.show({
                         title: 'Error',
@@ -504,12 +506,12 @@
     }
 
     function formatResult(val, row) {
-        if (val == '失败') {
-            return '<span style="color:red;">' + val + '</span>';
-        } else if (val == '通过') {
-            return '<span style="color:green;">' + val + '</span>';
+        if (val == '2') {
+            return '<span style="color:red;">失败</span>';
+        } else if (val == '1') {
+            return '<span style="color:green;">通过</span>';
         } else {
-            return val;
+            return "未执行";
         }
     }
     function rowformatter_pstatus(val, row) {
@@ -628,5 +630,67 @@
             }
         });
     });
+
+    var editIndex = undefined;
+    function endEditing(){
+        if (editIndex == undefined){return true}
+        if ($('#dg').datagrid('validateRow', editIndex)){
+            var ed = $('#dg').datagrid('getEditor', {index:editIndex,field:'cresult'});
+            var resultname = $(ed.target).combobox('getText');
+            $('#dg').datagrid('getRows')[editIndex]['resultname'] = resultname;
+            $('#dg').datagrid('endEdit', editIndex);
+            editIndex = undefined;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function onClickRow(index){
+        if (editIndex != index){
+            if (endEditing()){
+                $('#dg').datagrid('selectRow', index)
+                        .datagrid('beginEdit', index);
+                editIndex = index;
+                getChanges();
+            } else {
+                $('#dg').datagrid('selectRow', editIndex);
+            }
+        }
+    }
+    function append(){
+        if (endEditing()){
+            $('#dg').datagrid('appendRow',{status:'P'});
+            editIndex = $('#dg').datagrid('getRows').length-1;
+            $('#dg').datagrid('selectRow', editIndex)
+                    .datagrid('beginEdit', editIndex);
+        }
+    }
+    function removeit(){
+        if (editIndex == undefined){return}
+        $('#dg').datagrid('cancelEdit', editIndex)
+                .datagrid('deleteRow', editIndex);
+        editIndex = undefined;
+    }
+    function accept(){
+        if (endEditing()){
+            $('#dg').datagrid('acceptChanges');
+        }
+    }
+    function reject(){
+        $('#dg').datagrid('rejectChanges');
+        editIndex = undefined;
+    }
+    function getChanges(){
+        var rows = $('#dg').datagrid('getChanges');
+//        alert(rows.length+' rows are changed!');
+        if(rows.length != 0) {
+            $('#fm').form('load', rows[0]);
+            $('#cstatus').val(rows[0].cresult);
+            url = '{{url('engineer/updatestatus')}}?_token={{csrf_token()}}&cid=' + rows[0].cid + '&pid=' + rows[0].pid + '&cresult=' + rows[0].cresult + '&cbug=' + rows[0].cbug;
+            saveStatus();
+
+        }
+    }
+
 </script>
 </html>

@@ -4,22 +4,34 @@
                 <table id="dg" title="我的用例" class="easyui-datagrid" style="width:100%"
                        url="{{url('engineer/getcase')}}?_token={{csrf_token()}}"
                        toolbar="#toolbar" pagination="true"
-                       rownumbers="true" fitColumns="true" singleSelect="true">
+                       rownumbers="true" fitColumns="true" singleSelect="true"
+                       data-options="onClickRow: onClickRow"
+                >
                     <thead>
                     <tr>
                         <th field="cmodel" width="10%">模块</th>
                         <th field="ccase" width="40%">测试用例</th>
                         <th field="cexpect" width="20%">期待结果</th>
                         <th field="ctype" width="10%">测试类型</th>
-                        <th data-options="field:'cresult',formatter:formatResult" width="10%">测试结果</th>
-                        <th data-options="field:'cbug',formatter:rowformatter" width="10%" >bug</th>
+                        <th data-options="field:'cresult',formatter:formatResult,
+                        editor:{
+							type:'combobox',
+							options:{
+								valueField:'resultid',
+								textField:'resultname',
+								method:'get',
+								url:'{{url("/resources/org/json/results.json")}}',
+								required:true
+							}
+						}" width="10%">测试结果</th>
+                        <th data-options="field:'cbug',formatter:rowformatter,editor:'textbox'" width="10%" >bug</th>
                     </tr>
                     </thead>
                 </table>
                 <div id="toolbar" style="padding:5px;height:auto">
-                    <div>
-                        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editCase()">执行用例</a>
-                    </div>
+                    {{--<div>--}}
+                        {{--<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editCase()">执行用例</a>--}}
+                    {{--</div>--}}
                     <div>
                         项目:
                         <select id="projectselect" class="easyui-combobox" panelHeight="auto" style="width:100px">
