@@ -9,13 +9,14 @@
                        rownumbers="true" fitColumns="true" singleSelect="true">
                     <thead>
                     <tr>
-                        <th field="btitle" width="57%">标题</th>
+                        <th field="btitle" width="52%">标题</th>
                         <th field="bdescription" hidden="true" width="0%">详细步骤</th>
                         <th field="binarydata" hidden="true" width="0%">截图1</th>
                         <th field="binarydata2" hidden="true" width="0%">截图2</th>
                         <th field="pid" hidden="true" width="0%">项目编号</th>
                         <th data-options="field:'bid',formatter:rowformatter_buglist" width="5%">详情</th>
-                        <th field="btime" width="18%">提交时间</th>
+                        <th data-options="field:'status',formatter:rowformatter_bugstatus" width="10%">状态</th>
+                        <th field="btime" width="13%">提交时间</th>
                         <th data-options="field:'pname'" width="10%">项目名称</th>
                         <th field="uid" hidden="true" width="0%">提交人编号</th>
                         <th data-options="field:'username'" width="10%">提交人</th>

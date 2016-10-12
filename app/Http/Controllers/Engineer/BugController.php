@@ -48,7 +48,7 @@ class BugController extends CommonController
         $row = mysql_fetch_row($rs);
         $result["total"] = $row[0];
         //$rs = mysql_query("select case_mmorpg.cid,cmodel,ccase,cexpect,ctype,cresult,cbug from $pname limit $offset,$rows");
-        $rs= mysql_query("select bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,project.pname,user.username from bug, userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime asc limit $offset,$rows");
+        $rs= mysql_query("select bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,bug.status,project.pname,user.username from bug, userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime asc limit $offset,$rows");
         $items = array();
         while($row = mysql_fetch_object($rs)){
             array_push($items, $row);
@@ -99,6 +99,19 @@ class BugController extends CommonController
 
         $affect = DB::update('UPDATE bug SET uid=?, pid=?, btitle=?, bdescription=?, binarydata=?, binarydata2=? where bid='.$bid,
             array($userid,$bproject,$btitle,$bdescription,$str_file1,$str_file2));
+        if($affect ==1){
+            echo json_encode(array('success'=>true));
+        } else {
+            echo json_encode(array('msg'=>'Some errors occured.'));
+        }
+    }
+
+    public function changeprogress()
+    {
+        $bid = $_POST['bid'];
+        $status = $_POST['status'];
+        $affect = DB::update('UPDATE bug SET status=? where bid='.$bid,
+            array($status));
         if($affect ==1){
             echo json_encode(array('success'=>true));
         } else {

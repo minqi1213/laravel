@@ -112,7 +112,38 @@
 					}
 				}]
 	">
+
     <div class="ftitle">bug详情</div>
+    <div id="progress_1" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">Start Progress</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">Invalid Issue/Don'...</a>
+    </div>
+    <div id="progress_2" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Stop Progress</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">Resolve Issue</a>
+    </div>
+    <div id="progress_3" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(3)">RBT Test</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
+        <a href="#" class="easyui-menubutton" data-options="menu:'#mm1'">更多工作流动作</a>
+    </div>
+    <div id="mm1" style="width:100px;">
+        <div><a onclick="javascript:changeProgress(6)">Invalid Issue</a></div>
+        <div><a onclick="javascript:changeProgress(7)">Don't Fix Now</a></div>
+    </div>
+    <div id="progress_4" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(4)">Regression Test</a>
+    </div>
+    <div id="progress_5" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(5)">Close Issue</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
+    </div>
+    <div id="progress_6" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
+    </div>
+    <div id="progress_7" class="fitem" style="padding:5px;">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">Start Progress</a>
+    </div>
     <form id="fm_displaybug" method="post" enctype="multipart/form-data" novalidate>
         <div class="fitem">
             <label>请选择项目:</label>
@@ -125,6 +156,9 @@
                 @endforeach
                 @endif
             </select>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;状态:</label>
+            <label><div id="bug_status_dlg"></div></label>
+
         </div>
         <div class="fitem">
             <label>bug编号:</label>
@@ -191,6 +225,7 @@
 </body>
 <script type="text/javascript">
     var url;
+    var bid;
     function newBug() {
         $('#dlg_newbug').dialog('open').dialog('setTitle', '新建bug');
         $('#fm_newbug').form('clear');
@@ -312,6 +347,10 @@
             $('#fm_displaybug').form('load', row);
             $('#projectselect_displaybug').combobox('setValue', row.pid);
             $('#projectselect_displaybug').combobox('disable');
+            bid = row.bid;
+            showProgressBar(row.status);
+            $("#bug_status_dlg").empty();
+            $('<div</div>').html((rowformatter_bugstatus(row.status))).appendTo($('#bug_status_dlg'));
             var userid = '{{session('userid')}}';
             if (userid != row.uid) {
                 $("div.dialog-toolbar [id='edit_bug_toolbar']").eq(0).hide();
@@ -354,6 +393,77 @@
             }
         }
     }
+    function showProgressBar(status) {
+        $('#progress_1').attr('style', 'display:none;');
+        $('#progress_2').attr('style', 'display:none;');
+        $('#progress_3').attr('style', 'display:none;');
+        $('#progress_4').attr('style', 'display:none;');
+        $('#progress_5').attr('style', 'display:none;');
+        $('#progress_6').attr('style', 'display:none;');
+        $('#progress_7').attr('style', 'display:none;');
+        if(status == 0){
+            $('#progress_1').attr('style', 'display:block;');
+        } else if(status == 1){
+            $('#progress_2').attr('style', 'display:block;');
+        } else if(status == 2){
+            $('#progress_3').attr('style', 'display:block;');
+        } else if(status == 3){
+            $('#progress_4').attr('style', 'display:block;');
+        } else if(status == 4){
+            $('#progress_5').attr('style', 'display:block;');
+        } else if(status == 5){
+            $('#progress_6').attr('style', 'display:block;');
+        } else if(status == 6){
+            $('#progress_6').attr('style', 'display:block;');
+        } else if(status == 7){
+            $('#progress_7').attr('style', 'display:block;');
+        }
+    }
+
+    function changeProgress(statusid) {
+        url = "{{url('engineer/changeprogress')}}?_token={{csrf_token()}}";
+        var postStr = "bid=" + bid + "&status=" + statusid;
+        //alert(postStr);
+        var ajax = false;
+        //开始初始化XMLHttpRequest对象
+        if (window.XMLHttpRequest) { //Mozilla 浏览器
+            ajax = new XMLHttpRequest();
+            if (ajax.overrideMimeType) {//设置MiME类别
+                ajax.overrideMimeType("text/xml");
+            }
+        }
+        else if (window.ActiveXObject) { // IE浏览器
+            try {
+                ajax = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {
+                }
+            }
+        }
+        if (!ajax) { // 异常，创建对象实例失败
+            window.alert("不能创建XMLHttpRequest对象实例.");
+            return false;
+        }
+        //通过Post方式打开连接
+        ajax.open("POST", url, true);
+        //定义传输的文件HTTP头信息
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        //发送POST数据
+        ajax.send(postStr);
+        //获取执行状态
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                $('#dg_bug').datagrid('reload');    // reload the bug data
+                showProgressBar(statusid);
+                //$('#bug_status_dlg').append(rowformatter_bugstatus(statusid).html());
+                $("#bug_status_dlg").empty();
+                $('<div</div>').html((rowformatter_bugstatus(statusid))).appendTo($('#bug_status_dlg'));
+            }
+        }
+    }
+
     function editBug() {
 
 
@@ -503,6 +613,28 @@
     function rowformatter_buglist(value, row, index) {
         //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
         return "<div><a href=\"#\" class=\"easyui-linkbutton\" plain=\"true\" onclick=\"displayBug('" + index + "')\">" + value + "</a></div>";
+    }
+
+    function rowformatter_bugstatus(val, row, index){
+        if (val == '0') {
+            return '<span style="color:darkblue;">开始</span>';
+        } else if (val == '1') {
+            return '<span style="color:orange;">进行中</span>';
+        } else if (val == '2') {
+            return '<span style="color:orange;">VERIFICATION</span>';
+        } else if (val == '3') {
+            return '<span style="color:orange;">RBT</span>';
+        } else if (val == '4') {
+            return '<span style="color:orange;">REGRESSION</span>';
+        } else if (val == '5') {
+            return '<span style="color:forestgreen;">CLOSE</span>';
+        } else if (val == '6') {
+            return '<span style="color:forestgreen;">INVALID ISSUE</span>';
+        } else if (val == '7') {
+            return '<span style="color:forestgreen;">DON\'T FIX NOW</span>';
+        } else {
+            return "未知状态";
+        }
     }
 
     function formatResult(val, row) {
