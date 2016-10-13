@@ -115,34 +115,35 @@
 
     <div class="ftitle">bug详情</div>
     <div id="progress_1" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">Start Progress</a>
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">Invalid Issue/Don'...</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">开始流程</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">无效问题/暂不修复</a>
     </div>
     <div id="progress_2" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Stop Progress</a>
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">Resolve Issue</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">停止流程</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">解决问题</a>
     </div>
     <div id="progress_3" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(3)">RBT Test</a>
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
-        <a href="#" class="easyui-menubutton" data-options="menu:'#mm1'">更多工作流动作</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(3)">RBT测试</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(6)">无效问题</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(7)">暂不修复</a>
     </div>
-    <div id="mm1" style="width:100px;">
-        <div><a onclick="javascript:changeProgress(6)">Invalid Issue</a></div>
-        <div><a onclick="javascript:changeProgress(7)">Don't Fix Now</a></div>
-    </div>
+    {{--<div id="mm1" style="width:100px;">--}}
+        {{--<div><a onclick="javascript:changeProgress(6)">Invalid Issue</a></div>--}}
+        {{--<div><a onclick="javascript:changeProgress(7)">Don't Fix Now</a></div>--}}
+    {{--</div>--}}
     <div id="progress_4" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(4)">Regression Test</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(4)">回归测试</a>
     </div>
     <div id="progress_5" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(5)">Close Issue</a>
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(5)">关闭问题</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
     </div>
     <div id="progress_6" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">Reopen Issue</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
     </div>
     <div id="progress_7" class="fitem" style="padding:5px;">
-        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">Start Progress</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">开始流程</a>
     </div>
     <form id="fm_displaybug" method="post" enctype="multipart/form-data" novalidate>
         <div class="fitem">
@@ -621,17 +622,17 @@
         } else if (val == '1') {
             return '<span style="color:orange;">进行中</span>';
         } else if (val == '2') {
-            return '<span style="color:orange;">VERIFICATION</span>';
+            return '<span style="color:orange;">待验证</span>';
         } else if (val == '3') {
             return '<span style="color:orange;">RBT</span>';
         } else if (val == '4') {
-            return '<span style="color:orange;">REGRESSION</span>';
+            return '<span style="color:orange;">衰退</span>';
         } else if (val == '5') {
-            return '<span style="color:forestgreen;">CLOSE</span>';
+            return '<span style="color:forestgreen;">关闭</span>';
         } else if (val == '6') {
-            return '<span style="color:forestgreen;">INVALID ISSUE</span>';
+            return '<span style="color:forestgreen;">无效问题</span>';
         } else if (val == '7') {
-            return '<span style="color:forestgreen;">DON\'T FIX NOW</span>';
+            return '<span style="color:forestgreen;">暂不修复</span>';
         } else {
             return "未知状态";
         }
