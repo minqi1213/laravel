@@ -626,7 +626,7 @@
         } else if (val == '3') {
             return '<span style="color:orange;">RBT</span>';
         } else if (val == '4') {
-            return '<span style="color:orange;">衰退</span>';
+            return '<span style="color:orange;">待回归</span>';
         } else if (val == '5') {
             return '<span style="color:forestgreen;">关闭</span>';
         } else if (val == '6') {
