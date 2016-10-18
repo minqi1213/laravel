@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af702590-4ff4-4289-8f2c-49d62e070f8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php" />
     </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="engineer_layout.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="engineer_layout.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="628" column="51" selection-start-line="628" selection-start-column="51" selection-end-line="628" selection-end-column="51" />
+            <state relative-caret-position="16983">
+              <caret line="629" column="32" selection-start-line="629" selection-start-column="32" selection-end-line="629" selection-end-column="32" />
               <folding>
                 <marker date="1476356951714" expanded="true" signature="26619:26634" ph="..." />
                 <marker date="1476356951714" expanded="true" signature="26714:26727" ph="..." />
@@ -45,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BugController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BugController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2943">
-              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+            <state relative-caret-position="27">
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <marker date="1476261203511" expanded="true" signature="309:450" ph="select proje... project" />
                 <marker date="1476261203511" expanded="true" signature="1803:1996" ph="select count... bug" />
@@ -186,7 +185,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
-    <option name="width" value="1924" />
+    <option name="width" value="1942" />
     <option name="height" value="1042" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -468,25 +467,27 @@
       <workItem from="1476081651973" duration="10977000" />
       <workItem from="1476155388521" duration="18201000" />
       <workItem from="1476238697983" duration="13105000" />
-      <workItem from="1476327428985" duration="9818000" />
+      <workItem from="1476327428985" duration="9857000" />
+      <workItem from="1476435251069" duration="2953000" />
+      <workItem from="1476772748469" duration="210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196794000" />
+    <option name="totallyTimeSpent" value="199996000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1924" height="1042" extended-state="0" />
-    <editor active="true" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21405229" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21952535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28859857" sideWeight="0.5021575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37529692" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37529692" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -849,21 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2943">
-          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
-          <folding>
-            <marker date="1476261203511" expanded="true" signature="309:450" ph="select proje... project" />
-            <marker date="1476261203511" expanded="true" signature="1803:1996" ph="select count... bug" />
-            <marker date="1476261203511" expanded="true" signature="2226:2589" ph="select bug.b... bug" />
-            <marker date="1476261203511" expanded="true" signature="3683:3777" ph="INSERT INTO bug... " />
-            <marker date="1476261203511" expanded="true" signature="4503:4596" ph="UPDATE bug S... " />
-            <marker date="1476261203511" expanded="true" signature="5007:5041" ph="UPDATE bug S... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/engineer/bug.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -874,8 +860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/engineer_layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="628" column="51" selection-start-line="628" selection-start-column="51" selection-end-line="628" selection-end-column="51" />
+        <state relative-caret-position="16983">
+          <caret line="629" column="32" selection-start-line="629" selection-start-column="32" selection-end-line="629" selection-end-column="32" />
           <folding>
             <marker date="1476356951714" expanded="true" signature="26619:26634" ph="..." />
             <marker date="1476356951714" expanded="true" signature="26714:26727" ph="..." />
@@ -887,6 +873,21 @@
             <marker date="1476356951714" expanded="true" signature="27288:27306" ph="..." />
             <marker date="1476356951714" expanded="true" signature="27480:27490" ph="..." />
             <marker date="1476356951714" expanded="true" signature="27570:27582" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <marker date="1476261203511" expanded="true" signature="309:450" ph="select proje... project" />
+            <marker date="1476261203511" expanded="true" signature="1803:1996" ph="select count... bug" />
+            <marker date="1476261203511" expanded="true" signature="2226:2589" ph="select bug.b... bug" />
+            <marker date="1476261203511" expanded="true" signature="3683:3777" ph="INSERT INTO bug... " />
+            <marker date="1476261203511" expanded="true" signature="4503:4596" ph="UPDATE bug S... " />
+            <marker date="1476261203511" expanded="true" signature="5007:5041" ph="UPDATE bug S... " />
           </folding>
         </state>
       </provider>
