@@ -12,7 +12,7 @@
 	<!--头部 开始-->
 	<div class="top_box">
 		<div class="top_left">
-			<div class="logo">众包平台</div>
+			<div class="logo">闪测平台</div>
 			<ul>
 				<li><a href="{{url('cp/index')}}" class="active">首页</a></li>
 				{{--<li><a href="#">管理页</a></li>--}}

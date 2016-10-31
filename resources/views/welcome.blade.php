@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SunnyTest众包</title>
+        <title>SunnyTest闪测</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="{{asset('resources/views/engineer/style/css/ch-ui.admin.css')}}">
         <link rel="stylesheet" href="{{asset('resources/views/engineer/style/font/css/font-awesome.min.css')}}">
@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">欢迎访问SunnyTest众包平台</div>
+                <div class="title">欢迎访问SunnyTest闪测平台</div>
                 <br><br><br><br><br><br>
                 <input type="submit"  style="width:200px;height:50px;font-size:20px" value="我是工程师" onClick='location.href="{{url('engineer')}}"'/>
                 <input type="submit" style="width:200px;height:50px;font-size:20px" value="我是开发商" onClick='location.href="{{url('cp')}}"'/>
