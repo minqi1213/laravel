@@ -22,7 +22,7 @@
 			<p>{{$errors}}</p>
 		@endif
                 </div>
-        @endif
+    @endif
 
     </div>
 </div>
