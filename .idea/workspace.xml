@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af702590-4ff4-4289-8f2c-49d62e070f8e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/engineer/bug/add.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/bug/add.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/bug/add.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/pass.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/pass.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/engineer.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/engineer.blade.php" />
     </list>
@@ -531,12 +531,12 @@
       <workItem from="1477368190448" duration="6319000" />
       <workItem from="1477536951776" duration="4285000" />
       <workItem from="1477623129482" duration="7160000" />
-      <workItem from="1477882058587" duration="4425000" />
+      <workItem from="1477882058587" duration="4610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255110000" />
+    <option name="totallyTimeSpent" value="255295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1924" height="1042" extended-state="0" />
