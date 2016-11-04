@@ -48,7 +48,7 @@ Route::group(['middleware' => ['web', 'engineer.login'], 'prefix' => 'engineer',
     Route::resource('bug','BugController');
 
 //    Route::get('bug', 'BugController@index');
-//    Route::post('getbug', 'BugController@getbug');
+    Route::post('getbug', 'BugController@getbug');
 //    Route::post('savebug', 'BugController@savebug');
 //    Route::post('savechange', 'BugController@savechange');
 //    Route::post('changeprogress', 'BugController@changeprogress');
