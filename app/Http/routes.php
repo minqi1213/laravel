@@ -53,14 +53,14 @@ Route::group(['middleware' => ['web', 'engineer.login'], 'prefix' => 'engineer',
 //    Route::post('savechange', 'BugController@savechange');
     Route::post('changeprogress', 'BugController@changeprogress');
 //
-//    Route::get('case', 'CaseController@index');
-//    Route::post('getcase', 'CaseController@getcase');
-//    Route::post('updatestatus', 'CaseController@updatestatus');
-//    Route::post('getbugdetail', 'CaseController@getbugdetail');
-//
-//    Route::get('mission', 'MissionController@index');
-//    Route::post('getmission', 'MissionController@getmission');
-//    Route::any('acceptmission', 'MissionController@acceptmission');
+    Route::get('case', 'CaseController@index');
+    Route::post('getcase', 'CaseController@getcase');
+    Route::post('updatestatus', 'CaseController@updatestatus');
+    Route::post('getbugdetail', 'CaseController@getbugdetail');
+
+    Route::get('mission', 'MissionController@index');
+    Route::post('getmission', 'MissionController@getmission');
+    Route::any('acceptmission', 'MissionController@acceptmission');
 //
 //    Route::any('upload', 'CommonController@upload');
 });

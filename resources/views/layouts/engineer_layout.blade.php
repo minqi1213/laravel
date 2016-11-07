@@ -609,7 +609,7 @@
     }
     function rowformatter(value, row, index) {
         //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
-        return "<div><a href=\"#\" class=\"easyui-linkbutton\" plain=\"true\" onclick=\"showBug('" + value + "')\">" + value + "</a></div>";
+        return "<div><a href=\"/engineer/bug/"+value+"\" class=\"easyui-linkbutton\" plain=\"true\" >" + value + "</a></div>";
     }
     function rowformatter_buglist(value, row, index) {
         //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";

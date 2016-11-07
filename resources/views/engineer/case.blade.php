@@ -3,7 +3,7 @@
     <table width="100%"><tr><td align="center" valign="middle">
                 <table id="dg" title="我的用例" class="easyui-datagrid" style="width:100%"
                        url="{{url('engineer/getcase')}}?_token={{csrf_token()}}"
-                       toolbar="#toolbar" pagination="true"
+                       toolbar="#toolbar" pagination="true" nowrap="false"
                        rownumbers="true" fitColumns="true" singleSelect="true"
                        data-options="onClickRow: onClickRow"
                 >

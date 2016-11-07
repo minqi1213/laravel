@@ -12,7 +12,7 @@
                 <table id="dg_bug" title="我的bug" class="easyui-datagrid" style="width:100%"
                        url="{{url('engineer/getbug')}}?_token={{csrf_token()}}"
                        toolbar="#toolbar" pagination="true" pageSize="50" PageList="[50,100,150,200]"
-                       rownumbers="true" fitColumns="true" singleSelect="true">
+                       rownumbers="true" fitColumns="true" singleSelect="true" nowrap="false">
                     <thead>
                     <tr>
                         <th width="47%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
