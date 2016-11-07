@@ -32,6 +32,37 @@
     <!--结果集标题与导航组件 结束-->
     
     <div class="result_wrap">
+        <div id="progress_1" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">开始流程</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">无效问题/暂不修复</a>
+        </div>
+        <div id="progress_2" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">停止流程</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(2)">解决问题</a>
+        </div>
+        <div id="progress_3" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(3)">RBT测试</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(6)">无效问题</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(7)">暂不修复</a>
+        </div>
+        {{--<div id="mm1" style="width:100px;">--}}
+        {{--<div><a onclick="javascript:changeProgress(6)">Invalid Issue</a></div>--}}
+        {{--<div><a onclick="javascript:changeProgress(7)">Don't Fix Now</a></div>--}}
+        {{--</div>--}}
+        <div id="progress_4" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(4)">回归测试</a>
+        </div>
+        <div id="progress_5" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(5)">关闭问题</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
+        </div>
+        <div id="progress_6" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(0)">重新打开问题</a>
+        </div>
+        <div id="progress_7" class="fitem" style="padding:5px;">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">开始流程</a>
+        </div>
         <form action="{{url('engineer/bug/'.$field->bid)}}" method="post">
             <input type="hidden" name="_method" value="put">
             {{csrf_field()}}
@@ -96,4 +127,52 @@
             </table>
         </form>
     </div>
+    <script>
+        function changeProgress(statusid) {
+            url = "{{url('engineer/changeprogress')}}?_token={{csrf_token()}}";
+            var postStr = "bid=" + {{$field->bid}} + "&status=" + statusid;
+            //alert(postStr);
+            var ajax = false;
+            //开始初始化XMLHttpRequest对象
+            if (window.XMLHttpRequest) { //Mozilla 浏览器
+                ajax = new XMLHttpRequest();
+                if (ajax.overrideMimeType) {//设置MiME类别
+                    ajax.overrideMimeType("text/xml");
+                }
+            }
+            else if (window.ActiveXObject) { // IE浏览器
+                try {
+                    ajax = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                    }
+                }
+            }
+            if (!ajax) { // 异常，创建对象实例失败
+                window.alert("不能创建XMLHttpRequest对象实例.");
+                return false;
+            }
+            //通过Post方式打开连接
+            ajax.open("POST", url, true);
+            //定义传输的文件HTTP头信息
+            ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //发送POST数据
+            ajax.send(postStr);
+            //获取执行状态
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    $('#dg_bug').datagrid('reload');    // reload the bug data
+                    showProgressBar(statusid);
+                    //$('#bug_status_dlg').append(rowformatter_bugstatus(statusid).html());
+                    $("#bug_status_dlg").empty();
+                    $('<div</div>').html((rowformatter_bugstatus(statusid))).appendTo($('#bug_status_dlg'));
+                }
+            }
+        }
+        window.onload=function(){
+            showProgressBar({{$field->status}});
+        }
+    </script>
 @endsection

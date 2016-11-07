@@ -132,4 +132,17 @@ class BugController extends CommonController
         $result["rows"] = $items;
         echo json_encode($result);
     }
+
+    public function changeprogress()
+    {
+        $bid = $_POST['bid'];
+        $status = $_POST['status'];
+        $affect = DB::update('UPDATE bug SET status=? where bid='.$bid,
+            array($status));
+        if($affect ==1){
+            echo json_encode(array('success'=>true));
+        } else {
+            echo json_encode(array('msg'=>'Some errors occured.'));
+        }
+    }
 }

@@ -269,6 +269,32 @@
             }
         }
 
+        function showProgressBar(status) {
+            $('#progress_1').attr('style', 'display:none;');
+            $('#progress_2').attr('style', 'display:none;');
+            $('#progress_3').attr('style', 'display:none;');
+            $('#progress_4').attr('style', 'display:none;');
+            $('#progress_5').attr('style', 'display:none;');
+            $('#progress_6').attr('style', 'display:none;');
+            $('#progress_7').attr('style', 'display:none;');
+            if(status == 0){
+                $('#progress_1').attr('style', 'display:block;');
+            } else if(status == 1){
+                $('#progress_2').attr('style', 'display:block;');
+            } else if(status == 2){
+                $('#progress_3').attr('style', 'display:block;');
+            } else if(status == 3){
+                $('#progress_4').attr('style', 'display:block;');
+            } else if(status == 4){
+                $('#progress_5').attr('style', 'display:block;');
+            } else if(status == 5){
+                $('#progress_6').attr('style', 'display:block;');
+            } else if(status == 6){
+                $('#progress_6').attr('style', 'display:block;');
+            } else if(status == 7){
+                $('#progress_7').attr('style', 'display:block;');
+            }
+        }
     </script>
 
 </head>
