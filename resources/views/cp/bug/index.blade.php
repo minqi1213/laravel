@@ -1,16 +1,16 @@
-@extends('layouts.engineer')
+@extends('layouts.cp')
 @section('content')
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('engineer/bug')}}">首页</a> &raquo; 全部bug
+        <i class="fa fa-home"></i> <a href="{{url('cp/bug')}}">首页</a> &raquo; 全部bug
     </div>
     <!--面包屑导航 结束-->
     <table width="100%">
         <tr>
             <td align="center" valign="middle">
                 <table id="dg_bug" title="我的bug" class="easyui-datagrid" style="width:100%"
-                       url="{{url('engineer/getbug')}}?_token={{csrf_token()}}"
+                       url="{{url('cp/getbug')}}?_token={{csrf_token()}}"
                        toolbar="#toolbar" pagination="true" pageSize="50" PageList="[50,100,150,200]"
                        rownumbers="true" fitColumns="true" singleSelect="true" nowrap="false">
                     <thead>
@@ -26,10 +26,10 @@
                     </thead>
                 </table>
                 <div id="toolbar" style="padding:5px;height:auto">
-                    <div>
-                        <a href="{{url('engineer/bug/create')}}" class="easyui-linkbutton" iconCls="icon-add" plain="true"
-                           >新建bug</a>
-                    </div>
+                    {{--<div>--}}
+                        {{--<a href="{{url('cp/bug/create')}}" class="easyui-linkbutton" iconCls="icon-add" plain="true"--}}
+                           {{-->新建bug</a>--}}
+                    {{--</div>--}}
                     <div>
                         &nbsp;&nbsp;&nbsp;&nbsp;请选择项目:&nbsp;&nbsp;
                         <select id="projectselect_bug" class="easyui-combobox" panelHeight="auto" style="width:100px">
@@ -39,11 +39,7 @@
                                 <option value="{{$d->pid}}">{{$d->pname}}</option>";
                             @endforeach
                         </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;请选择提交人:&nbsp;&nbsp;
-                        <select id="projectselect_user" class="easyui-combobox" panelHeight="auto" style="width:100px">
-                            <option value=0>所有人</option>
-                            <option value=1>我</option>
-                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input id="projectselect_input" class="easyui-textbox" style="width:40%"
                                data-options="prompt:'请输入要搜索的关键字，以空格隔开'"/>

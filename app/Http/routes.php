@@ -72,6 +72,7 @@ Route::group(['middleware' => ['web', 'cp.login'], 'prefix' => 'cp', 'namespace'
     Route::get('quit', 'LoginController@quit');
     Route::any('pass', 'IndexController@pass');
 
+    Route::resource('bug','BugController');
     Route::get('bug', 'BugController@index');
     Route::post('getbug', 'BugController@getbug');
 

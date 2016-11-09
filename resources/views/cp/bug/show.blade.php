@@ -1,10 +1,10 @@
-@extends('layouts.engineer')
+@extends('layouts.cp')
 @section('content')
 
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href={{url('engineer/bug')}}>首页</a> &raquo; 新建bug
+        <i class="fa fa-home"></i> <a href={{url('cp/bug')}}>首页</a> &raquo; 查看bug
     </div>
     <!--面包屑导航 结束-->
 
@@ -24,11 +24,11 @@
                 </div>
             @endif
         </div>
-        <div class="result_content">
-            <div class="short_wrap">
-                <a href="{{url('engineer/bug/create')}}"><i class="fa fa-plus"></i>新建bug</a>
-            </div>
-        </div>
+        {{--<div class="result_content">--}}
+            {{--<div class="short_wrap">--}}
+                {{--<a href="{{url('cp/bug/create')}}"><i class="fa fa-plus"></i>新建bug</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
     <!--结果集标题与导航组件 结束-->
@@ -64,7 +64,7 @@
         <div id="progress_7" class="fitem" style="padding:5px;">
             <a href="#" class="easyui-linkbutton" data-options="plain:true" onclick="javascript:changeProgress(1)">开始流程</a>
         </div>
-        <form action="{{url('engineer/bug/'.$field->bid)}}" method="post">
+        <form action="{{url('cp/bug/'.$field->bid)}}" method="post">
             <input type="hidden" name="_method" value="put">
             {{csrf_field()}}
             <table class="add_tab">
@@ -120,7 +120,7 @@
     </div>
     <script>
         function changeProgress(statusid) {
-            url = "{{url('engineer/changeprogress')}}?_token={{csrf_token()}}";
+            url = "{{url('cp/changeprogress')}}?_token={{csrf_token()}}";
             var postStr = "bid=" + {{$field->bid}} + "&status=" + statusid;
             //alert(postStr);
             var ajax = false;

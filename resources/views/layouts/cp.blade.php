@@ -131,11 +131,11 @@
         }
         function rowformatter_buglist(value, row, index) {
             //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
-            return "<div><a href=\"/engineer/bug/"+row.bid+"\" class=\"easyui-linkbutton\" plain=\"true\" >" + value + "</a></div>";
+            return "<div><a href=\"/cp/bug/"+row.bid+"\" class=\"easyui-linkbutton\" plain=\"true\" >" + value + "</a></div>";
         }
         function rowformatter_buglist_operate(value, row, index) {
             //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
-            return "<div><a href=\"/engineer/bug/"+value+"/edit\" class=\"easyui-linkbutton\" plain=\"true\" >修改</a></div>";
+            return "<div><a href=\"/cp/bug/"+value+"/edit\" class=\"easyui-linkbutton\" plain=\"true\" >修改</a></div>";
         }
 
         function rowformatter_bugstatus(val, row, index){
@@ -202,7 +202,7 @@
             $('#dg_bug').datagrid({
                 queryParams: {
                     projectid: $('#projectselect_bug').combobox('getValue'),
-                    isuser: $('#projectselect_user').combobox('getValue'),
+//                    isuser: $('#projectselect_user').combobox('getValue'),
                     keyword: $('#projectselect_input').val()
                 }
             });

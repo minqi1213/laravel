@@ -78,7 +78,7 @@ class BugController extends CommonController
     //PUT|PATCH.engineer/bug/{bug}      更新bug
     public function update($bug_id)
     {
-        $input = Input::except('_token','_method');
+        $input = Input::except('_token','_method','uid');
         $re = Bug::where('bid',$bug_id)->update($input);
         if($re){
             return redirect('engineer/bug');
