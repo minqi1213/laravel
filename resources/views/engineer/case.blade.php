@@ -11,8 +11,8 @@
                     <tr>
                         <th field="cmodel" width="10%">模块</th>
                         <th field="ccase" width="40%">测试用例</th>
-                        <th field="cexpect" width="20%">期待结果</th>
                         <th field="ctype" width="10%">测试类型</th>
+                        <th field="username" width="10%">执行者</th>
                         <th data-options="field:'cresult',formatter:formatResult,
                         editor:{
 							type:'combobox',
@@ -24,11 +24,15 @@
 								required:true
 							}
 						}" width="10%">测试结果</th>
-                        <th data-options="field:'cbug',formatter:rowformatter,editor:'textbox'" width="10%" >bug</th>
+                        <th data-options="field:'cbug',formatter:rowformatter,editor:'textbox'" width="20%" >bug</th>
                     </tr>
                     </thead>
                 </table>
                 <div id="toolbar" style="padding:5px;height:auto">
+                    <div>
+                        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"
+                           >新建执行用例</a>
+                    </div>
                     {{--<div>--}}
                         {{--<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editCase()">执行用例</a>--}}
                     {{--</div>--}}

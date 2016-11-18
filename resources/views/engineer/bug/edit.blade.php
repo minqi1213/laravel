@@ -81,6 +81,48 @@
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>模块：</th>
+                        <td>
+                            <select name="bug_model">
+                                <option value="0">请选择模块</option>
+                                @foreach($model as $m)
+                                    <option value="{{$m->model_id}}"
+                                            @if($m->model_id==$field->bug_model) selected
+                                            @endif
+                                    >{{$m->model_name}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>优先级：</th>
+                        <td>
+                            <select name="bug_priority">
+                                <option value="0">请选择优先级</option>
+                                @foreach($priority as $p)
+                                    <option value="{{$p->priority_id}}"
+                                            @if($p->priority_id==$field->bug_priority) selected
+                                            @endif
+                                    >{{$p->priority_name}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>负责人：</th>
+                        <td>
+                            <select name="bug_assign">
+                                <option value="0">请选择负责人</option>
+                                @foreach($assign as $a)
+                                    <option value="{{$a->uid}}"
+                                            @if($a->uid==$field->bug_assign) selected
+                                            @endif
+                                    >{{$a->username}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
                     <tr style="display: none">
                         <th><i class="require">*</i>用户id：</th>
                         <td>

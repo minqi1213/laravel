@@ -29,6 +29,7 @@ class LoginController extends CommonController
             session(['role'=>'engineer']);
             session(['userid'=>$user[0]->uid]);
             session(['name'=>$user[0]->username]);
+            session(['pid'=>0]);
             return redirect('engineer/index');
         } else {
             return view('engineer.login');

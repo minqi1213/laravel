@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,7 +16,10 @@ class IndexController extends CommonController
     public function index(){
 
         //$pdo = DB::connection()->getPdo();
-        return view('engineer.index');
+        $data = DB::select('select project.pid,project.pname from project,userproject where userproject.uid=:uid and userproject.status=1 and userproject.pid=project.pid',
+            ['uid'=>session('userid')]);
+        return view('engineer.index',compact('data'));
+//        return view('engineer.index');
     }
 
     public function info(){

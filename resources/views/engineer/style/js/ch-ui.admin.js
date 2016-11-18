@@ -21,8 +21,10 @@ $(function(){
 //左侧点击弹开子菜单
 $(function(){
 	$('.menu_box').find('ul').find('li').eq(0).find('.sub_menu').show();
+	$('.menu_box').find('ul').find('li').eq(1).find('.sub_menu').show();
 	$('.menu_box').find('ul').find('li').find('h3').click(function(){
-		$(this).parent('li').find('.sub_menu').slideToggle();
+		$(this).parent('li').find('.sub_menu').show();
+		// $(this).parent('li').find('.sub_menu').slideToggle();
 	});
 })
 

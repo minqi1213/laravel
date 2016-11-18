@@ -5,23 +5,31 @@
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
         <i class="fa fa-home"></i> <a href="{{url('engineer/bug')}}">首页</a> &raquo; 全部bug
     </div>
+    {{--{{session('pid')}}--}}
     <!--面包屑导航 结束-->
     <table width="100%">
         <tr>
             <td align="center" valign="middle">
                 <table id="dg_bug" title="我的bug" class="easyui-datagrid" style="width:100%"
-                       url="{{url('engineer/getbug')}}?_token={{csrf_token()}}"
+                       @if(count($pid)>0)
+                            url="{{url('engineer/getbug')}}?_token={{csrf_token()}}&pid={{$pid}}&uid_tome={{$uid_tome}}&uid_mysub={{$uid_mysub}}"
+                       @else
+                            url="{{url('engineer/getbug')}}?_token={{csrf_token()}}&uid_tome={{$uid_tome}}&uid_mysub={{$uid_mysub}}"
+                       @endif
                        toolbar="#toolbar" pagination="true" pageSize="50" PageList="[50,100,150,200]"
                        rownumbers="true" fitColumns="true" singleSelect="true" nowrap="false">
                     <thead>
                     <tr>
-                        <th width="47%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
+                        <th field="model_name" width="6%" >模块</th>
+                        <th width="42%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
                         <th field="bdescription" hidden="true" width="0%" >详细步骤</th>
-                        <th data-options="field:'status',formatter:rowformatter_bugstatus" width="10%">状态</th>
-                        <th field="btime" width="13%">提交时间</th>
+                        <th data-options="field:'status',formatter:rowformatter_bugstatus" width="7%">状态</th>
+                        <th field="priority_name" width="5%" >优先级</th>
                         <th data-options="field:'pname'" width="10%">项目名称</th>
-                        <th data-options="field:'username'" width="10%">提交人</th>
-                        <th data-options="field:'bid',formatter:rowformatter_buglist_operate" width="10%">操作</th>
+                        <th data-options="field:'username'" width="6%">提交人</th>
+                        <th data-options="field:'bug_assignname'" width="6%">负责人</th>
+                        <th data-options="field:'bid',formatter:rowformatter_buglist_operate" width="5%">操作</th>
+                        <th field="btime" width="13%">提交时间</th>
                     </tr>
                     </thead>
                 </table>
@@ -32,11 +40,16 @@
                     </div>
                     <div>
                         &nbsp;&nbsp;&nbsp;&nbsp;请选择项目:&nbsp;&nbsp;
-                        <select id="projectselect_bug" class="easyui-combobox" panelHeight="auto" style="width:100px">
+                        <select id="projectselect_bug" class="easyui-combobox" panelHeight="auto" style="width:100px"
+                        >
                             <option value=0>所有项目</option>
                             @foreach($data as $d)
                                 echo "
-                                <option value="{{$d->pid}}">{{$d->pname}}</option>";
+                                <option value="{{$d->pid}}"
+                                        @if($d->pid==$pid) selected
+                                        @elseif($d->pid == session('pid')) selected
+                                        @endif
+                                >{{$d->pname}}</option>";
                             @endforeach
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;请选择提交人:&nbsp;&nbsp;

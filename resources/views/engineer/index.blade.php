@@ -13,9 +13,9 @@
 	<div class="top_box">
 		<div class="top_left">
 			<div class="logo">众包平台</div>
-			<ul>
-				<li><a href="{{url('engineer/index')}}" class="active">首页</a></li>
-				{{--<li><a href="#">管理页</a></li>--}}
+			<ul class="nav">
+				<li><a href="{{url('engineer/index')}}" class="active">首页</a>
+				</li>
 			</ul>
 		</div>
 		<div class="top_right">
@@ -33,20 +33,36 @@
 	<div class="menu_box">
 		<ul>
             <li>
-            	<h3><i class="fa fa-fw fa-clipboard"></i>常用操作</h3>
-                <ul class="sub_menu">
-                    <li><a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>bug管理</a></li>
-                    <li><a href="{{url('engineer/case')}}" target="main"><i class="fa fa-fw"></i>测试用例管理</a></li>
-                    <li><a href="{{url('engineer/mission')}}" target="main"><i class="fa fa-fw"></i>任务接取中心</a></li>
+            	<h3><i class="fa fa-fw"></i>常用操作</h3>
+                <ul class="sub_menu_1">
+					<a href="{{url('engineer/info')}}" target="main"><i class="fa fa-fw"></i>用户指南</a></br>
+					<a href="{{url('engineer/management')}}" target="main"><i class="fa fa-fw"></i>项目管理</a></br>
+					<a href="{{url('engineer/case')}}" target="main"><i class="fa fa-fw"></i>case管理</a></br>
+                    <a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>bug管理</a></br>
+					<a href="#" target="main"><i class="fa fa-fw"></i>账户管理</a></br>
+					<li></li>
+                    {{--<li><a href="{{url('engineer/mission')}}" target="main"><i class="fa fa-fw"></i>任务接取中心</a></li>--}}
                 </ul>
             </li>
-            {{--<li>--}}
-            	{{--<h3><i class="fa fa-fw fa-cog"></i>系统设置</h3>--}}
-                {{--<ul class="sub_menu">--}}
-                    {{--<li><a href="#" target="main"><i class="fa fa-fw fa-cubes"></i>网站配置</a></li>--}}
-                    {{--<li><a href="#" target="main"><i class="fa fa-fw fa-database"></i>备份还原</a></li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+            <li>
+            	<h3><i class="fa fa-fw"></i>过滤器</h3>
+                <ul class="sub_menu_1">
+                    <a href="#" target="main"><i class="fa fa-fw"></i>分配给我的case</a></br>
+                    <a href="{{url('engineer/bug')}}?uid_tome={{session('userid')}}" target="main"><i class="fa fa-fw"></i>分配给我的问题</a></br>
+					<a href="{{url('engineer/bug')}}?uid_mysub={{session('userid')}}" target="main"><i class="fa fa-fw"></i>我提交的问题</a></br>
+					<a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>所有问题</a></br>
+					<li></li>
+                </ul>
+            </li>
+			<li>
+				<h3><i class="fa fa-fw"></i>过滤器列表</h3>
+				<ul class="sub_menu_1">
+					@foreach($data as $d)
+						<a href="{{url('engineer/bug')}}?pid={{$d->pid}}" target="main"><i class="fa fa-fw"></i>{{$d->pname}} 的Bug列表</a></br>
+					@endforeach
+						<li></li>
+				</ul>
+			</li>
             {{--<li>--}}
             	{{--<h3><i class="fa fa-fw fa-thumb-tack"></i>工具导航</h3>--}}
                 {{--<ul class="sub_menu">--}}

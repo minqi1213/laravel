@@ -52,6 +52,7 @@ Route::group(['middleware' => ['web', 'engineer.login'], 'prefix' => 'engineer',
 //    Route::post('savebug', 'BugController@savebug');
 //    Route::post('savechange', 'BugController@savechange');
     Route::post('changeprogress', 'BugController@changeprogress');
+    Route::post('setsessionpid', 'BugController@setSessionPid');
 //
     Route::get('case', 'CaseController@index');
     Route::post('getcase', 'CaseController@getcase');
@@ -63,6 +64,7 @@ Route::group(['middleware' => ['web', 'engineer.login'], 'prefix' => 'engineer',
     Route::any('acceptmission', 'MissionController@acceptmission');
 //
 //    Route::any('upload', 'CommonController@upload');
+    Route::get('management', 'ManagementController@index');
 });
 
 Route::group(['middleware' => ['web', 'cp.login'], 'prefix' => 'cp', 'namespace' => 'Cp'], function () {

@@ -30,7 +30,6 @@
         </div>
     </div>
     <!--结果集标题与导航组件 结束-->
-    
     <div class="result_wrap">
         <form action="{{url('engineer/bug')}}" method="post">
             {{csrf_field()}}
@@ -41,7 +40,47 @@
                         <td>
                             <select name="pid">
                                 @foreach($data as $d)
-                                    <option value="{{$d->pid}}">{{$d->pname}}</option>
+                                    <option value="{{$d->pid}}"
+                                    @if ($d->pid==session('pid'))
+                                        selected
+                                    @endif
+                                    >{{$d->pname}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>模块：</th>
+                        <td>
+                            <select name="bug_model">
+                                <option value="0">请选择模块</option>
+                                @foreach($model as $m)
+                                    <option value="{{$m->model_id}}"
+                                    >{{$m->model_name}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>优先级：</th>
+                        <td>
+                            <select name="bug_priority">
+                                <option value="0">请选择优先级</option>
+                                @foreach($priority as $p)
+                                    <option value="{{$p->priority_id}}"
+                                    >{{$p->priority_name}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="120"><i class="require">*</i>负责人：</th>
+                        <td>
+                            <select name="bug_assign">
+                                <option value="0">请选择负责人</option>
+                                @foreach($assign as $a)
+                                    <option value="{{$a->uid}}"
+                                    >{{$a->username}}</option>
                                 @endforeach
                             </select>
                         </td>
