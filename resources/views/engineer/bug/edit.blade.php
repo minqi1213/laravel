@@ -71,7 +71,7 @@
                     <tr>
                         <th width="120"><i class="require">*</i>项目：</th>
                         <td>
-                            <select name="pid">
+                            <select id="projectselect_bugedit" name="pid" disabled=true>
                                 @foreach($data as $d)
                                     <option value="{{$d->pid}}"
                                         @if($d->pid==$field->pid) selected
@@ -132,7 +132,7 @@
                     <tr>
                         <th><i class="require">*</i>标题：</th>
                         <td>
-                            <input type="text" class="lg" name="btitle" value="{{$field->btitle}}">
+                            <input  type="text" class="lg" name="btitle" value="{{$field->btitle}}">
                             <p>标题可以写30个字</p>
                         </td>
                     </tr>
@@ -156,6 +156,15 @@
                                 {overflow:hidden;height:20px}
                                 div.edui-box{overflow:hidden;height:22px}
                             </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="require"></i>备注：</th>
+                        <td>
+                            {{--<input type="text" class="lg" name="btitle" value="{{$field->btitle}}">--}}
+                            <li>2016-11-21 anan 验证通过，这个无法复现</li>
+                            <li>2016-11-22 zhangxuejian 这个问题已经修复</li>
+                            <li>2016-11-21 anan 提交了bug</li>
                         </td>
                     </tr>
                     <tr>

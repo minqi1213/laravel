@@ -34,9 +34,10 @@ class BugController extends CommonController
         $pid = isset($input['pid']) ? intval($input['pid']):"";
         $uid_tome = isset($input['uid_tome']) ? intval($input['uid_tome']):"";
         $uid_mysub = isset($input['uid_mysub']) ? intval($input['uid_mysub']):"";
+        $model = DB::select('select model.model_id,model.model_name from model where model_pid=:pid',['pid'=>session('pid')]);
         $data = DB::select('select project.pid,project.pname from project,userproject where userproject.uid=:uid and userproject.status=1 and userproject.pid=project.pid',
             ['uid'=>session('userid')]);
-        return view('engineer.bug.index',compact('data','pid','uid_tome','uid_mysub'));
+        return view('engineer.bug.index',compact('data','pid','uid_tome','uid_mysub','model'));
     }
     //post.engineer/bug 添加bug提交
     public function store()
@@ -124,6 +125,7 @@ class BugController extends CommonController
         $projectid = isset($_POST['projectid']) ? intval($_POST['projectid']):0;
         $isuser = isset($_POST['isuser']) ? intval($_POST['isuser']):0;
         $keyword = isset($_POST['keyword'])? trim($_POST['keyword']):"";
+        $model = isset($_POST['model']) ? intval($_POST['model']):0;
         //search query keyword and project user
         $query_keyword = "";
         if($keyword == ""){
@@ -151,15 +153,16 @@ class BugController extends CommonController
             }
 
         }
-        $query_assign_to_me = ($input['uid_tome']=="")?'':'and bug.bug_assign='.$input['uid_tome'];
+        $query_assign_to_me = ($input['uid_tome']=="")?'':' and bug.bug_assign='.$input['uid_tome'];
+        $query_model = ($model == 0)?'':' and bug.bug_model='.$model;
         include 'conn.php';
         //$rs = mysql_query("select count(*) from case_mmorpg");
         //dd("select bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,bug.status,project.pname,user.username from bug, userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime desc limit $offset,$rows");
-        $rs = mysql_query("select count(*) from bug, userproject,user where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"." and bug.uid=user.uid order by bug.btime asc");
+        $rs = mysql_query("select count(*) from bug, userproject,user where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project".$query_model." and bug.uid=user.uid order by bug.btime asc");
         $row = mysql_fetch_row($rs);
         $result["total"] = $row[0];
         //$rs = mysql_query("select case_mmorpg.cid,cmodel,ccase,cexpect,ctype,cresult,cbug from $pname limit $offset,$rows");
-        $rs= mysql_query("select model.model_name,priority.priority_name,bug.bug_assignname,bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,bug.status,project.pname,user.username from ((bug left join model on model.model_id=bug.bug_model) left join priority on priority.priority_id=bug.bug_priority), userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"."$query_assign_to_me"." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime desc limit $offset,$rows");
+        $rs= mysql_query("select model.model_name,priority.priority_name,bug.bug_assignname,bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,bug.status,project.pname,user.username from ((bug left join model on model.model_id=bug.bug_model) left join priority on priority.priority_id=bug.bug_priority), userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"."$query_assign_to_me".$query_model." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime desc limit $offset,$rows");
         $items = array();
         while($row = mysql_fetch_object($rs)){
             array_push($items, $row);

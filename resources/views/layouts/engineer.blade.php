@@ -246,7 +246,8 @@
                 queryParams: {
                     projectid: $('#projectselect_bug').combobox('getValue'),
                     isuser: $('#projectselect_user').combobox('getValue'),
-                    keyword: $('#projectselect_input').val()
+                    keyword: $('#projectselect_input').val(),
+                    model: $('#modelselect_bug').combobox('getValue')
                 }
             });
         }

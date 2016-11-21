@@ -52,13 +52,23 @@
                                 >{{$d->pname}}</option>";
                             @endforeach
                         </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;请选择模块:&nbsp;&nbsp;
+                        <select id="modelselect_bug" class="easyui-combobox" panelHeight="auto" style="width:100px"
+                        >
+                            <option value=0>所有模块</option>
+                            @foreach($model as $m)
+                                echo "
+                                <option value="{{$m->model_id}}"
+                                >{{$m->model_name}}</option>";
+                            @endforeach
+                        </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;请选择提交人:&nbsp;&nbsp;
                         <select id="projectselect_user" class="easyui-combobox" panelHeight="auto" style="width:100px">
                             <option value=0>所有人</option>
                             <option value=1>我</option>
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input id="projectselect_input" class="easyui-textbox" style="width:40%"
+                        <input id="projectselect_input" class="easyui-textbox" style="width:20%"
                                data-options="prompt:'请输入要搜索的关键字，以空格隔开'"/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#" class="easyui-linkbutton" iconCls="icon-search"
