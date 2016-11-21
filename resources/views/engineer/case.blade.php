@@ -40,7 +40,10 @@
                         项目:
                         <select id="projectselect" class="easyui-combobox" panelHeight="auto" style="width:100px">
                             @foreach($data as $d)
-                                echo "<option value="{{$d->pid}}">{{$d->pname}}</option>";
+                                echo "<option value="{{$d->pid}}"
+                                        @if($d->pid == session('pid')) selected
+                                        @endif
+                                >{{$d->pname}}</option>";
                             @endforeach
                         </select>
                         <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="loadDataGridWithParam()">选择</a>

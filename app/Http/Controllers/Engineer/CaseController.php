@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Engineer;
 
+use App\Http\Model\Project;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,15 +25,20 @@ class CaseController extends CommonController
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page - 1) * $rows;
         $result = array();
-        $pname = isset($_POST['pname']) ? strtolower("case_" . trim($_POST['pname'])) : "";
+        $projectname =isset($_POST['pname']) ?  DB::table('project')->select('project_name')->where('pname','=',$_POST['pname'])->first()->project_name :"";
+        $pname = isset($_POST['pname']) ? strtolower("case_" . trim($projectname)) : "";
+        $pid=isset($_POST['pname']) ?  DB::table('project')->select('pid')->where('pname','=',$_POST['pname'])->first()->pid :"";
+        if($pid!=""){
+            session(['pid'=>$pid]);
+        }
         include 'conn.php';
         if ($pname != "") {
             //$rs = mysql_query("select count(*) from case_mmorpg");
-            $rs = mysql_query("select count(*) from usercase left join $pname on usercase.cid=$pname.cid where usercase.uid=$uid");
+            $rs = mysql_query("select count(*) from $pname");
             $row = mysql_fetch_row($rs);
             $result["total"] = $row[0];
             //$rs = mysql_query("select case_mmorpg.cid,cmodel,ccase,cexpect,ctype,cresult,cbug from $pname limit $offset,$rows");
-            $rs = @mysql_query("select usercase.cid,usercase.pid,usercase.cmodel,$pname.ccase, $pname.cexpect, $pname.ctype, usercase.cresult,usercase.cbug from usercase left join $pname on usercase.cid=$pname.cid where usercase.uid=$uid limit $offset,$rows");
+            $rs = @mysql_query("select $pname.cid,$pname.ccase, $pname.cexpect, $pname.ctype, $pname.cresult,$pname.cmodel ,$pname.cbug , user.username  from  $pname left join user on user.uid=$pname.case_uid  limit $offset,$rows");
             $items = array();
             while ($row = mysql_fetch_object($rs)) {
                 array_push($items, $row);
@@ -40,9 +46,26 @@ class CaseController extends CommonController
             $result["rows"] = $items;
             echo json_encode($result);
         } else {
-            $result["total"] = 0;
-            $result["rows"] = "";
-            echo json_encode($result);
+            if (session('pid')!=""){
+                $pid = session('pid');
+                $projectname =DB::table('project')->select('project_name')->where('pid','=',$pid)->first()->project_name;
+                $pname = strtolower("case_" . trim($projectname));
+                //$rs = mysql_query("select count(*) from case_mmorpg");
+                $rs = mysql_query("select count(*) from $pname");
+                $row = mysql_fetch_row($rs);
+                $result["total"] = $row[0];
+                //$rs = mysql_query("select case_mmorpg.cid,cmodel,ccase,cexpect,ctype,cresult,cbug from $pname limit $offset,$rows");
+                $rs = @mysql_query("select $pname.cid,$pname.ccase, $pname.cexpect, $pname.ctype, $pname.cresult,$pname.cmodel ,$pname.cbug , user.username  from  $pname left join user on user.uid=$pname.case_uid  limit $offset,$rows");
+                $items = array();
+                while ($row = mysql_fetch_object($rs)) {
+                    array_push($items, $row);
+                }
+                $result["rows"] = $items;
+                echo json_encode($result);
+            } else {
+                $result["total"] = 0;
+                $result["rows"] = "";
+                echo json_encode($result);}
         }
     }
 
@@ -52,10 +75,11 @@ class CaseController extends CommonController
         $cid = intval($_REQUEST['cid']);
         $cresult = $_REQUEST['cresult'];
         $cbug = $_REQUEST['cbug'];
-        $pid = intval($_REQUEST['pid']);
-
-        $affect = DB::update('UPDATE usercase SET cresult=?, cbug=? where cid=? and pid=? and uid=?',
-            array($cresult,$cbug,$cid,$pid,$uid));
+        $pid = session('pid');
+        $projectname = DB::table('project')->select('project_name')->where('pid','=',$pid)->first()->project_name;
+        $case_table = strtolower("case_" . trim($projectname));
+        $affect = DB::update('UPDATE '.$case_table.' SET cresult=?, cbug=? where cid=?',
+            array($cresult,$cbug,$cid));
         if($affect ==1){
             echo json_encode(array('success'=>true));
         } else {

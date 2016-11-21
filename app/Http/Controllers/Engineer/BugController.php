@@ -162,7 +162,7 @@ class BugController extends CommonController
         $row = mysql_fetch_row($rs);
         $result["total"] = $row[0];
         //$rs = mysql_query("select case_mmorpg.cid,cmodel,ccase,cexpect,ctype,cresult,cbug from $pname limit $offset,$rows");
-        $rs= mysql_query("select model.model_name,priority.priority_name,bug.bug_assignname,bug.bid,bug.btitle,bug.uid,bug.pid,bug.bdescription,bug.binarydata,bug.binarydata2,bug.btime,bug.status,project.pname,user.username from ((bug left join model on model.model_id=bug.bug_model) left join priority on priority.priority_id=bug.bug_priority), userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"."$query_assign_to_me".$query_model." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime desc limit $offset,$rows");
+        $rs= mysql_query("select model.model_name,priority.priority_name,bug.bug_assignname,bug.bid,bug.btitle,bug.uid,bug.pid,bug.btime,bug.status,project.pname,user.username from ((bug left join model on model.model_id=bug.bug_model) left join priority on priority.priority_id=bug.bug_priority), userproject,user,project where ".$query_keyword."userproject.pid=bug.pid and userproject.uid='$uid'".$query_user."$query_project"."$query_assign_to_me".$query_model." and bug.uid=user.uid and project.pid=bug.pid order by bug.btime desc limit $offset,$rows");
         $items = array();
         while($row = mysql_fetch_object($rs)){
             array_push($items, $row);
