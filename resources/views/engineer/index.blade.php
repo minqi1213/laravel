@@ -12,7 +12,7 @@
 	<!--头部 开始-->
 	<div class="top_box">
 		<div class="top_left">
-			<div class="logo">众包平台</div>
+			<div class="logo">闪测平台</div>
 			<ul class="nav">
 				<li><a href="{{url('engineer/index')}}" class="active">首页</a>
 				</li>
@@ -39,7 +39,7 @@
 					<a href="{{url('engineer/management')}}" target="main"><i class="fa fa-fw"></i>项目管理</a></br>
 					<a href="{{url('engineer/case')}}" target="main"><i class="fa fa-fw"></i>case管理</a></br>
                     <a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>bug管理</a></br>
-					<a href="#" target="main"><i class="fa fa-fw"></i>账户管理</a></br>
+					<a target="main"><i class="fa fa-fw"></i>账户管理</a></br>
 					<li></li>
                     {{--<li><a href="{{url('engineer/mission')}}" target="main"><i class="fa fa-fw"></i>任务接取中心</a></li>--}}
                 </ul>
@@ -47,7 +47,7 @@
             <li>
             	<h3><i class="fa fa-fw"></i>过滤器</h3>
                 <ul class="sub_menu_1">
-                    <a href="#" target="main"><i class="fa fa-fw"></i>分配给我的case</a></br>
+                    <a target="main"><i class="fa fa-fw"></i>分配给我的case</a></br>
                     <a href="{{url('engineer/bug')}}?uid_tome={{session('userid')}}" target="main"><i class="fa fa-fw"></i>分配给我的问题</a></br>
 					<a href="{{url('engineer/bug')}}?uid_mysub={{session('userid')}}" target="main"><i class="fa fa-fw"></i>我提交的问题</a></br>
 					<a href="{{url('engineer/bug')}}" target="main"><i class="fa fa-fw"></i>所有问题</a></br>

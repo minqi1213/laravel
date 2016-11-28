@@ -9,7 +9,7 @@
 <body style="background:#F3F3F4;">
 	<div class="login_box">
 		<h1>SunnyTest</h1>
-		<h2>欢迎使用众包管理平台</h2>
+		<h2>欢迎使用闪测管理平台</h2>
 		<div class="form">
 			@if(session('msg'))
 				<p style="color:red">{{session('msg')}}</p>

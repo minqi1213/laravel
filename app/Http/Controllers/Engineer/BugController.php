@@ -32,6 +32,9 @@ class BugController extends CommonController
 //        return view('engineer.bug.index')->with('data',$bugs);
         $input = Input::all();
         $pid = isset($input['pid']) ? intval($input['pid']):"";
+        if ($pid==""){
+            $pid = session('pid');
+        }
         $uid_tome = isset($input['uid_tome']) ? intval($input['uid_tome']):"";
         $uid_mysub = isset($input['uid_mysub']) ? intval($input['uid_mysub']):"";
         $model = DB::select('select model.model_id,model.model_name from model where model_pid=:pid',['pid'=>session('pid')]);
@@ -149,15 +152,20 @@ class BugController extends CommonController
         if (session('pid')!=""){
             $projectid = session('pid');
         }
-        if ($projectid !=""){
+        if ($pid == ""){
+            if ($projectid !=""){
             $query_project = ($projectid==0)? '' : " and bug.pid="."$projectid";
-                if ($projectid!=0){session(['pid'=>$projectid]);}
+            if ($projectid!=0){session(['pid'=>$projectid]);}
         } else{
             $query_project = ($pid==0)? '' : " and bug.pid="."$pid";
             if (session('pid')==""){
                 session(['pid'=>$pid]);
             }
 
+        }
+        } else{
+            $query_project = ($pid==0)? '' : " and bug.pid="."$pid";
+                session(['pid'=>$pid]);
         }
         $query_assign_to_me = ($input['uid_tome']=="")?'':' and bug.bug_assign='.$input['uid_tome'];
         $query_model = ($model == 0)?'':' and bug.bug_model='.$model;

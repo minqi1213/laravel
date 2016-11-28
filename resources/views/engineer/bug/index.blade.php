@@ -40,17 +40,16 @@
                            >新建bug</a>
                     </div>
                     <div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;请选择项目:&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;请选择项目:&nbsp;
                         <select id="projectselect_bug" class="easyui-combobox" panelHeight="auto" style="width:100px"
                         >
                             <option value=0>所有项目</option>
                             @foreach($data as $d)
-                                echo "
                                 <option value="{{$d->pid}}"
                                         @if($d->pid==$pid) selected
-                                        @elseif($d->pid == session('pid')) selected
+                                        {{--@elseif($d->pid == session('pid')) selected--}}
                                         @endif
-                                >{{$d->pname}}</option>";
+                                >{{$d->pname}}</option>;
                             @endforeach
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;请选择模块:&nbsp;&nbsp;

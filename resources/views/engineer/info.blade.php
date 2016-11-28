@@ -18,7 +18,7 @@
 	
     <div class="result_wrap">
         <div class="result_title">
-            <h2>欢迎登录SunnyTest众包平台</h2>
+            <h2>欢迎登录SunnyTest闪测平台</h2>
         </div>
         <div class="result_content">
             <ul>
