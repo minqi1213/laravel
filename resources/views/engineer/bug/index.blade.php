@@ -23,7 +23,7 @@
                     <tr>
                         <th data-options="field:'bid',sortable:true" width="6%" >Bug ID</th>
                         <th data-options="field:'model_name',sortable:true" width="6%" >模块</th>
-                        <th width="35%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
+                        <th width="40%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
                         <th field="bdescription" hidden="true" width="0%" >详细步骤</th>
                         <th data-options="field:'status',formatter:rowformatter_bugstatus,sortable:true" width="7%">状态</th>
                         <th data-options="field:'priority_name',sortable:true,
@@ -39,7 +39,7 @@
                         <th data-options="field:'pname'" width="10%">项目名称</th>
                         <th data-options="field:'username',sortable:true" width="6%">提交人</th>
                         <th data-options="field:'bug_assignname',sortable:true" width="6%">负责人</th>
-                        <th data-options="field:'bid',formatter:rowformatter_buglist_operate" width="5%">操作</th>
+                        {{--<th data-options="field:'bid',formatter:rowformatter_buglist_operate" width="5%">操作</th>--}}
                         <th data-options="field:'btime',sortable:true" width="13%">提交时间</th>
                     </tr>
                     </thead>
