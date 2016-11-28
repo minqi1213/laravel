@@ -4,11 +4,6 @@
     <list default="true" id="af702590-4ff4-4289-8f2c-49d62e070f8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/info.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/info.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/engineer/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/engineer/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,46 +24,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="BugController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BugController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="378">
+              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
               <folding>
                 <element signature="e#49#72#0#PHP" expanded="true" />
-                <marker date="1480304600717" expanded="true" signature="441:736" ph="select bug.b... bug" />
-                <marker date="1480304600717" expanded="true" signature="1710:1780" ph="select model... model" />
-                <marker date="1480304600717" expanded="true" signature="1836:1977" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="1839:1977" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="3072:3213" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="3286:3356" ph="select model... model" />
-                <marker date="1480304600717" expanded="true" signature="3416:3438" ph="select * fro... priority" />
-                <marker date="1480304600717" expanded="true" signature="3472:3578" ph="select user.... user" />
-                <marker date="1480304600717" expanded="true" signature="3472:3583" ph="select user.... user" />
-                <marker date="1480304600717" expanded="true" signature="3851:3992" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="4065:4165" ph="select model... model" />
-                <marker date="1480304600717" expanded="true" signature="4218:4240" ph="select * fro... priority" />
-                <marker date="1480304600717" expanded="true" signature="4274:4417" ph="select user.... user" />
-                <marker date="1480304600717" expanded="true" signature="4382:4416" ph="select pid f... bug" />
-                <marker date="1480304600717" expanded="true" signature="5349:5433" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="5349:5490" ph="select proje... project" />
-                <marker date="1480304600717" expanded="true" signature="5563:5663" ph="select model... model" />
-                <marker date="1480304600717" expanded="true" signature="5716:5738" ph="select * fro... priority" />
-                <marker date="1480304600717" expanded="true" signature="5772:5915" ph="select user.... user" />
-                <marker date="1480304600717" expanded="true" signature="5880:5914" ph="select pid f... bug" />
-                <marker date="1480304600717" expanded="true" signature="8210:8574" ph="select bug.b... bug" />
-                <marker date="1480304600717" expanded="true" signature="8610:8727" ph="select count... bug" />
-                <marker date="1480304600717" expanded="true" signature="8610:8816" ph="select count... bug" />
-                <marker date="1480304600717" expanded="true" signature="9046:9417" ph="select model... bug" />
-                <marker date="1480304600717" expanded="true" signature="9046:9449" ph="select model... bug" />
-                <marker date="1480304600717" expanded="true" signature="9046:9568" ph="select bug.b... bug" />
-                <marker date="1480304600717" expanded="true" signature="9913:9947" ph="UPDATE bug S... " />
+                <marker date="1480304871931" expanded="true" signature="441:736" ph="select bug.b... bug" />
+                <marker date="1480304871931" expanded="true" signature="1710:1780" ph="select model... model" />
+                <marker date="1480304871931" expanded="true" signature="1826:1967" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="1829:1967" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="3062:3203" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="3276:3346" ph="select model... model" />
+                <marker date="1480304871931" expanded="true" signature="3406:3428" ph="select * fro... priority" />
+                <marker date="1480304871931" expanded="true" signature="3462:3568" ph="select user.... user" />
+                <marker date="1480304871931" expanded="true" signature="3462:3573" ph="select user.... user" />
+                <marker date="1480304871931" expanded="true" signature="3841:3982" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="4055:4155" ph="select model... model" />
+                <marker date="1480304871931" expanded="true" signature="4208:4230" ph="select * fro... priority" />
+                <marker date="1480304871931" expanded="true" signature="4264:4407" ph="select user.... user" />
+                <marker date="1480304871931" expanded="true" signature="4372:4406" ph="select pid f... bug" />
+                <marker date="1480304871931" expanded="true" signature="5339:5423" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="5339:5480" ph="select proje... project" />
+                <marker date="1480304871931" expanded="true" signature="5553:5653" ph="select model... model" />
+                <marker date="1480304871931" expanded="true" signature="5706:5728" ph="select * fro... priority" />
+                <marker date="1480304871931" expanded="true" signature="5762:5905" ph="select user.... user" />
+                <marker date="1480304871931" expanded="true" signature="5870:5904" ph="select pid f... bug" />
+                <marker date="1480304871931" expanded="true" signature="8200:8564" ph="select bug.b... bug" />
+                <marker date="1480304871931" expanded="true" signature="8600:8717" ph="select count... bug" />
+                <marker date="1480304871931" expanded="true" signature="8600:8806" ph="select count... bug" />
+                <marker date="1480304871931" expanded="true" signature="9036:9407" ph="select model... bug" />
+                <marker date="1480304871931" expanded="true" signature="9036:9439" ph="select model... bug" />
+                <marker date="1480304871931" expanded="true" signature="9036:9558" ph="select bug.b... bug" />
+                <marker date="1480304871931" expanded="true" signature="9903:9937" ph="UPDATE bug S... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
@@ -145,8 +140,8 @@
         <option value="$PROJECT_DIR$/resources/views/engineer/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/engineer/info.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/engineer/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" />
         <option value="$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php" />
       </list>
     </option>
   </component>
@@ -440,12 +435,12 @@
       <workItem from="1479700776861" duration="20224000" />
       <workItem from="1479805550444" duration="4133000" />
       <workItem from="1480069091019" duration="56000" />
-      <workItem from="1480299374027" duration="4296000" />
+      <workItem from="1480299374027" duration="4516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434004000" />
+    <option name="totallyTimeSpent" value="434224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1934" height="1042" extended-state="0" />
@@ -833,48 +828,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding>
-            <element signature="e#49#72#0#PHP" expanded="true" />
-            <marker date="1480304600717" expanded="true" signature="441:736" ph="select bug.b... bug" />
-            <marker date="1480304600717" expanded="true" signature="1710:1780" ph="select model... model" />
-            <marker date="1480304600717" expanded="true" signature="1836:1977" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="1839:1977" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="3072:3213" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="3286:3356" ph="select model... model" />
-            <marker date="1480304600717" expanded="true" signature="3416:3438" ph="select * fro... priority" />
-            <marker date="1480304600717" expanded="true" signature="3472:3578" ph="select user.... user" />
-            <marker date="1480304600717" expanded="true" signature="3472:3583" ph="select user.... user" />
-            <marker date="1480304600717" expanded="true" signature="3851:3992" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="4065:4165" ph="select model... model" />
-            <marker date="1480304600717" expanded="true" signature="4218:4240" ph="select * fro... priority" />
-            <marker date="1480304600717" expanded="true" signature="4274:4417" ph="select user.... user" />
-            <marker date="1480304600717" expanded="true" signature="4382:4416" ph="select pid f... bug" />
-            <marker date="1480304600717" expanded="true" signature="5349:5433" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="5349:5490" ph="select proje... project" />
-            <marker date="1480304600717" expanded="true" signature="5563:5663" ph="select model... model" />
-            <marker date="1480304600717" expanded="true" signature="5716:5738" ph="select * fro... priority" />
-            <marker date="1480304600717" expanded="true" signature="5772:5915" ph="select user.... user" />
-            <marker date="1480304600717" expanded="true" signature="5880:5914" ph="select pid f... bug" />
-            <marker date="1480304600717" expanded="true" signature="8210:8574" ph="select bug.b... bug" />
-            <marker date="1480304600717" expanded="true" signature="8610:8727" ph="select count... bug" />
-            <marker date="1480304600717" expanded="true" signature="8610:8816" ph="select count... bug" />
-            <marker date="1480304600717" expanded="true" signature="9046:9417" ph="select model... bug" />
-            <marker date="1480304600717" expanded="true" signature="9046:9449" ph="select model... bug" />
-            <marker date="1480304600717" expanded="true" signature="9046:9568" ph="select bug.b... bug" />
-            <marker date="1480304600717" expanded="true" signature="9913:9947" ph="UPDATE bug S... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/engineer/bug/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Engineer/BugController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="e#49#72#0#PHP" expanded="true" />
+            <marker date="1480304871931" expanded="true" signature="441:736" ph="select bug.b... bug" />
+            <marker date="1480304871931" expanded="true" signature="1710:1780" ph="select model... model" />
+            <marker date="1480304871931" expanded="true" signature="1826:1967" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="1829:1967" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="3062:3203" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="3276:3346" ph="select model... model" />
+            <marker date="1480304871931" expanded="true" signature="3406:3428" ph="select * fro... priority" />
+            <marker date="1480304871931" expanded="true" signature="3462:3568" ph="select user.... user" />
+            <marker date="1480304871931" expanded="true" signature="3462:3573" ph="select user.... user" />
+            <marker date="1480304871931" expanded="true" signature="3841:3982" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="4055:4155" ph="select model... model" />
+            <marker date="1480304871931" expanded="true" signature="4208:4230" ph="select * fro... priority" />
+            <marker date="1480304871931" expanded="true" signature="4264:4407" ph="select user.... user" />
+            <marker date="1480304871931" expanded="true" signature="4372:4406" ph="select pid f... bug" />
+            <marker date="1480304871931" expanded="true" signature="5339:5423" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="5339:5480" ph="select proje... project" />
+            <marker date="1480304871931" expanded="true" signature="5553:5653" ph="select model... model" />
+            <marker date="1480304871931" expanded="true" signature="5706:5728" ph="select * fro... priority" />
+            <marker date="1480304871931" expanded="true" signature="5762:5905" ph="select user.... user" />
+            <marker date="1480304871931" expanded="true" signature="5870:5904" ph="select pid f... bug" />
+            <marker date="1480304871931" expanded="true" signature="8200:8564" ph="select bug.b... bug" />
+            <marker date="1480304871931" expanded="true" signature="8600:8717" ph="select count... bug" />
+            <marker date="1480304871931" expanded="true" signature="8600:8806" ph="select count... bug" />
+            <marker date="1480304871931" expanded="true" signature="9036:9407" ph="select model... bug" />
+            <marker date="1480304871931" expanded="true" signature="9036:9439" ph="select model... bug" />
+            <marker date="1480304871931" expanded="true" signature="9036:9558" ph="select bug.b... bug" />
+            <marker date="1480304871931" expanded="true" signature="9903:9937" ph="UPDATE bug S... " />
+          </folding>
         </state>
       </provider>
     </entry>

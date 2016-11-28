@@ -37,7 +37,7 @@ class BugController extends CommonController
         }
         $uid_tome = isset($input['uid_tome']) ? intval($input['uid_tome']):"";
         $uid_mysub = isset($input['uid_mysub']) ? intval($input['uid_mysub']):"";
-        $model = DB::select('select model.model_id,model.model_name from model where model_pid=:pid',['pid'=>session('pid')]);
+        $model = DB::select('select model.model_id,model.model_name from model where model_pid=:pid',['pid'=>$pid]);
         $data = DB::select('select project.pid,project.pname from project,userproject where userproject.uid=:uid and userproject.status=1 and userproject.pid=project.pid',
             ['uid'=>session('userid')]);
         return view('engineer.bug.index',compact('data','pid','uid_tome','uid_mysub','model'));
