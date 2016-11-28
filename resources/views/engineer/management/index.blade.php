@@ -7,6 +7,163 @@
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
         <i class="fa fa-home"></i> <a href="{{url('engineer/management')}}">首页</a> &raquo; 全部数据
     </div>
+
+    <div class="result_wrap">
+        <center><h3>功能交互测试报告</h3></center>
+        <div class="result_content" style="width: 50%;height: 50%;float: left">
+            <table class="list_tab" width="100%" >
+                <tr>
+                    <td width="30%">测试应用</td>
+                    <td width="70%">xxxx</td>
+                </tr>
+                <tr>
+                    <td width="30%">测试类型</td>
+                    <td width="70%">深度交互测试</td>
+                </tr>
+                <tr>
+                    <td width="30%">硬件环境</td>
+                    <td width="30%">华为Mate7，华为荣耀6，三星A8，小米3</td>
+                </tr>
+                <tr>
+                    <td width="30%">负责人</td>
+                    <td width="30%">SunnyTest</td>
+                </tr>
+            </table>
+        </div>
+        <div class="result_content" style="width: 50%;height: 50%;float: left">
+            <table class="list_tab" width="100%" >
+                <tr>
+                    <td width="30%">测试版本</td>
+                    <td width="70%">V1.0</td>
+                </tr>
+                <tr>
+                    <td width="30%">测试时间</td>
+                    <td width="70%">2016/11/20--2016/11/22</td>
+                </tr>
+                <tr>
+                    <td width="30%">软件环境</td>
+                    <td width="30%">Android4.1--Android5.1</td>
+                </tr>
+                <tr>
+                    <td width="30%">测试人员</td>
+                    <td width="30%">SunnyTest</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="result_wrap">
+        <div class="result_content" style="width: 100%;height: 100%">
+            <center><h3>测试内容</h3></center>
+        <textarea style="width: 100%;height: 80px; resize:none" readonly="readonly">
+ 1. 已完成功能交互测试用例维护，本次新增测试用例79条。
+ 2. 已完成功能交互测试用例执行，本次共计执行测试用例443条。
+ 3. 针对已修复Bug进行验证及RBT测试。
+ 4. 截止当前，共计提交222个Bug，其中35个S级Bug，所提交Bug均已提交至JIRA
+        </textarea>
+        </div>
+    </div>
+
+    <div class="result_wrap">
+        <div class="result_content" style="width: 100%;height: 100%">
+            <center><h3>测试总结</h3></center>
+            <table class="list_tab" width="100%" >
+                <tr>
+                    <th >用例执行结果</th>
+                    <td >Total</td>
+                    <td >1739</td>
+                    <td >Pass</td>
+                    <td >1000</td>
+                    <td >Fail</td>
+                    <td >200</td>
+                    <td >N/A</td>
+                    <td >100</td>
+                    <td >Block</td>
+                    <td >100</td>
+                    <td >NR</td>
+                    <td >100</td>
+                    <td >覆盖率</td>
+                    <td >100%</td>
+                    <td >通过率</td>
+                    <td >80%</td>
+                </tr>
+            {{--</table>--}}
+            {{--<table class="list_tab" width="100%" >--}}
+                <tr>
+                    <th >Open Bug</th>
+                    <td >Total</td>
+                    <td >173</td>
+                    <td >S级</td>
+                    <td >55</td>
+                    <td >A级</td>
+                    <td >116</td>
+                    <td >B级</td>
+                    <td >2</td>
+                    <td >C级</td>
+                    <td >0</td>
+                </tr>
+                <tr>
+                    <th >严重问题列举</th>
+                    <td  colspan="16">1.[1.0][新手引导]引导攻击好友，攻击完成后提示获得300000金币，金币数量没有增加，需重新登陆<br>
+                    2. [1.0][UE]在iPhone5S手机上，进行正常游戏时，手机发热严重且界面刷新缓慢。<br>
+                    3. [1.0][UE]在三星A7手机上，点击任意界面，游戏卡顿严重，页面刷新极慢</td>
+                </tr>
+                <tr>
+                    <th >概要总结</th>
+                    <td  colspan="16">
+                        <table width="100%">
+                            <tr >
+                                <th>模块</th>
+                                <td>Bug数量</td>
+                                <td>S级Bug</td>
+                                <td width="40%">备注</td>
+                            </tr>
+                            <tr>
+                                <th>任务</th>
+                                <td>24</td>
+                                <td>8</td>
+                                <td width="40%"></td>
+                            </tr>
+                            <tr><th>名将</th>
+                                <td>6</td>
+                                <td>6</td>
+                                <td width="40%"></td></tr>
+                            <tr>
+                                <td>活动</td>
+                                <td>21</td>
+                                <td>5</td>
+                                <td width="40%"></td>
+                            </tr>
+                            <tr>
+                                <th>宗派</th>
+                                <td>11</td>
+                                <td>5</td>
+                                <td width="40%"></td>
+                            </tr>
+                            <tr>
+                                <th>技能</th>
+                                <td>11</td>
+                                <td>5</td>
+                                <td width="40%"></td>
+                            </tr>
+                            <tr>
+                                <th>背包</th>
+                                <td>2</td>
+                                <td>0</td>
+                                <td width="40%"></td>
+                            </tr>
+                            <tr>
+                                <th>仓库</th>
+                                <td>1</td>
+                                <td>0</td>
+                                <td width="40%"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <div class="result_wrap">
         <div id="left_dailyadd" class="result_content" style="width: 45%;height: 45%;float: left">
             <h3>每日新增case</h3>
@@ -76,7 +233,7 @@
                 });
             </script>
         </div>
-        <div id="right_dailyexecute" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10px;">
+        <div id="right_dailyexecute" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10%;">
             <h3>每日执行case</h3>
             <table class="list_tab">
                 <tr>
@@ -213,7 +370,7 @@
                 });
             </script>
         </div>
-        <div id="right_priority" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10px;">
+        <div id="right_priority" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10%;">
             <h3>Bug优先级</h3>
             <table class="list_tab">
                 <tr>
@@ -273,7 +430,8 @@
                 });
             </script>
         </div>
-        <div id="left_submit" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10px;">
+
+        <div id="left_submit" class="result_content" style="width: 45%;height: 45%;float: left;">
             <h3>Bug提交人</h3>
             <table class="list_tab">
                 <tr>
@@ -339,7 +497,7 @@
                 });
             </script>
         </div>
-        <div id="right_assign" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10px;">
+        <div id="right_assign" class="result_content" style="width: 45%;height: 45%;float: left;margin-left:10%;">
             <h3>Bug指派人</h3>
             <table class="list_tab">
                 <tr>

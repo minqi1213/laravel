@@ -50,6 +50,10 @@ class BugController extends CommonController
             'btitle.required'=>'bug标题不能为空',
         ];
         $validator = Validator::make($input,$rules,$message);
+        if($input['bug_assign'] !=0){
+            $temp = DB::table('user')->select('username')->where('uid','=',$input['bug_assign'])->first();
+            $input['bug_assignname'] = $temp->username;
+        }
         if($validator->passes()){
             $re = Bug::create($input);
             if($re){
@@ -91,8 +95,10 @@ class BugController extends CommonController
     public function update($bug_id)
     {
         $input = Input::except('_token','_method','uid');
-        $temp = DB::table('user')->select('username')->where('uid','=',$input['bug_assign'])->first();
-        $input['bug_assignname'] = $temp->username;
+        if($input['bug_assign'] !=0) {
+            $temp = DB::table('user')->select('username')->where('uid', '=', $input['bug_assign'])->first();
+            $input['bug_assignname'] = $temp->username;
+        }
         $re = Bug::where('bid',$bug_id)->update($input);
         if($re){
             return redirect('engineer/bug');
