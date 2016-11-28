@@ -150,6 +150,15 @@
                         </style>
                     </tr>
                     <tr>
+                        <th><i class="require"></i>备注：</th>
+                        <td>
+                            {{--<input type="text" class="lg" name="btitle" value="{{$field->btitle}}">--}}
+                            <li>2016-11-21 anan 验证通过，这个无法复现</li>
+                            <li>2016-11-22 zhangxuejian 这个问题已经修复</li>
+                            <li>2016-11-21 anan 提交了bug</li>
+                        </td>
+                    </tr>
+                    <tr>
                         <th></th>
                         <td>
                             {{--<input type="submit" value="提交">--}}
