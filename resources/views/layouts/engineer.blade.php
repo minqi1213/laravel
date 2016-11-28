@@ -205,10 +205,16 @@
 
         function formatResult(val, row) {
             if (val == '2') {
-                return '<span style="color:red;">失败</span>';
+                return '<span style="">失败</span>';
             } else if (val == '1') {
-                return '<span style="color:green;">通过</span>';
-            } else {
+                return '<span >通过</span>';
+            } else if (val == '3') {
+                return '<span >Block</span>';
+            }else if (val == '4') {
+                return '<span >N/A</span>';
+            }else if (val == '5') {
+                return '<span >N/R</span>';
+            }else {
                 return "未执行";
             }
         }

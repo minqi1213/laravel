@@ -1,5 +1,8 @@
 [
   {"resultid":"0","resultname":"未执行"},
   {"resultid":"1","resultname":"通过"},
-  {"resultid":"2","resultname":"失败"}
+  {"resultid":"2","resultname":"失败"},
+  {"resultid":"3","resultname":"Block"},
+  {"resultid":"4","resultname":"NA"},
+  {"resultid":"5","resultname":"NR"}
 ]

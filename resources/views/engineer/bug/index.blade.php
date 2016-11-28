@@ -21,11 +21,21 @@
                 data-options="remoteSort:false,multiSort:true">
                     <thead>
                     <tr>
+                        <th data-options="field:'bid',sortable:true" width="6%" >Bug ID</th>
                         <th data-options="field:'model_name',sortable:true" width="6%" >模块</th>
-                        <th width="41%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
+                        <th width="35%" data-options="field:'btitle',formatter:rowformatter_buglist">标题</th>
                         <th field="bdescription" hidden="true" width="0%" >详细步骤</th>
                         <th data-options="field:'status',formatter:rowformatter_bugstatus,sortable:true" width="7%">状态</th>
-                        <th data-options="field:'priority_name',sortable:true" width="6%">优先级</th>
+                        <th data-options="field:'priority_name',sortable:true,
+                        styler:function(value,index,row){
+                        if (value=='S'){
+                            return 'background-color:red;font-weight:bold;';}
+                        else if (value=='B'){
+                            return 'background-color:steelblue;font-weight:bold;';}
+                        else if (value=='C'){
+                            return 'background-color:yellow;font-weight:bold;';}
+                        }
+                        " width="6%" >优先级</th>
                         <th data-options="field:'pname'" width="10%">项目名称</th>
                         <th data-options="field:'username',sortable:true" width="6%">提交人</th>
                         <th data-options="field:'bug_assignname',sortable:true" width="6%">负责人</th>

@@ -609,7 +609,7 @@
     }
     function rowformatter(value, row, index) {
         //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
-        return "<div><a href=\"/engineer/bug/"+value+"\" class=\"easyui-linkbutton\" plain=\"true\" >" + value + "</a></div>";
+        return "<div><a href=\"/engineer/bug/"+value.split(" ")[0]+"\" class=\"easyui-linkbutton\" plain=\"true\" >" + value + "</a></div>";
     }
     function rowformatter_buglist(value, row, index) {
         //return "<a href='detail.php?id="+value+"' target='_blank' >"+value+"</a>";
@@ -640,11 +640,28 @@
 
     function formatResult(val, row) {
         if (val == '2') {
-            return '<span style="color:red;">失败</span>';
+            return '<span >失败</span>';
         } else if (val == '1') {
-            return '<span style="color:green;">通过</span>';
-        } else {
+            return '<span >通过</span>';
+        } else if (val == '3') {
+            return '<span >Block</span>';
+        }else if (val == '4') {
+            return '<span >N/A</span>';
+        }else if (val == '5') {
+            return '<span >N/R</span>';
+        }else {
             return "未执行";
+        }
+    }
+    function formatResult_priority(val, row) {
+        if (val == 'S') {
+            return '<span style="color:red;">S</span>';
+        } else if (val == 'A') {
+            return '<span style="color:green;">A</span>';
+        } else if (val == 'B') {
+            return '<span style="color:steelblue;">B</span>';
+        }else if (val == 'C') {
+            return '<span style="color:yellow;"></span>';
         }
     }
     function rowformatter_pstatus(val, row) {

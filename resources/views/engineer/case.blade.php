@@ -9,8 +9,9 @@
                 >
                     <thead>
                     <tr>
+                        <th field="cid" width="5%">Case ID</th>
                         <th field="cmodel" width="10%">模块</th>
-                        <th field="ccase" width="40%">测试用例</th>
+                        <th field="ccase" width="35%">测试用例</th>
                         <th field="ctype" width="10%">测试类型</th>
                         <th field="username" width="10%">执行者</th>
                         <th data-options="field:'cresult',formatter:formatResult,
@@ -23,7 +24,22 @@
 								url:'{{url("/resources/org/json/results.json")}}',
 								required:true
 							}
-						}" width="10%">测试结果</th>
+						},
+                        styler:function(value,index,row){
+                        if (value==0){
+                            return 'background-color:yellow;';}
+                        else if (value==1){
+                            return 'background-color:green;';}
+                        else if (value==2){
+                            return 'background-color:red;';}
+                        else if (value==3){
+                            return 'background-color:lightgrey;';}
+                        else if (value==4){
+                            return 'background-color:darkgrey;';}
+                        else if (value==5){
+                            return 'background-color:lightgrey;';}
+                        }
+                        " width="10%">测试结果</th>
                         <th data-options="field:'cbug',formatter:rowformatter,editor:'textbox'" width="20%" >bug</th>
                     </tr>
                     </thead>
