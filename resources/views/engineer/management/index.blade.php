@@ -14,7 +14,7 @@
             <table class="list_tab" width="100%" >
                 <tr>
                     <td width="30%">测试应用</td>
-                    <td width="70%">xxxx</td>
+                    <td width="70%">新华炫影</td>
                 </tr>
                 <tr>
                     <td width="30%">测试类型</td>
@@ -162,6 +162,10 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="result_wrap">
+        <center><h3>模块划分</h3></center>
+        <img src="{{asset('resources/assets/20161208163214.jpg')}}" style="width:100%">
     </div>
 
     <div class="result_wrap">
